@@ -1,0 +1,20 @@
+nav{
+    display: flex;
+}
+
+nav > #social{
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    margin-right: 1rem;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+nav > #social > li{
+    margin-right: 1rem;
+}
+
+nav > #social > li:last-child{
+    margin-right: 0rem;
+}

@@ -1,0 +1,12 @@
+<!-- Nav -->
+<nav>
+    <!-- Redes -->
+    <ul id="social">
+        <li *ngFor="let link of socialLinks">
+            <app-social-link [link]="link"></app-social-link> <!-- Pasar cosas al componente-->
+        </li>
+    </ul>
+
+    <!-- Login Btn -->
+    <button type="button" class="btn btn-primary">Login</button>
+</nav>

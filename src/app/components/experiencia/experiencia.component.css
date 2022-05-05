@@ -1,0 +1,8 @@
+.experiencia { background: #afa; padding: 6px;} /** kitar fondo **/
+#experiencia {display: flex;
+padding: 0;
+list-style: none;
+margin: 0;
+}
+#experiencia > li {margin-right: 1rem;
+}

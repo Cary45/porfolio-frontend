@@ -1,0 +1,8 @@
+.educacion { background: #afa; padding: 6px;} /** kitar fondo **/
+#educacion {display: flex;
+padding: 0;
+list-style: none;
+margin: 0;
+}
+#educacion > li {margin-right: 1rem;
+}

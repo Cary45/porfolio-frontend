@@ -1,0 +1,22 @@
+<div class="educacion m-3">
+    <h1>EDUCACION TITULO MEJORAR</h1>
+    <ul id="educacion">
+      <li *ngFor="let Edu of Educacion">
+        <div class="card" style="width: 18rem">
+          <img [src]="Edu.fotourl" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">{{Edu.puesto}}</h5>
+            <p class="card-text">
+              {{Edu.descripcion}}
+            </p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{Edu.inicio}}</li>
+            <li class="list-group-item">{{Edu.fin}}</li>
+            <li class="list-group-item">{{Edu.empresa}}</li>
+          </ul>
+          </div>
+                 
+      </li>
+    </ul>
+  </div>

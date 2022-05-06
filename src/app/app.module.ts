@@ -10,7 +10,7 @@ import { EducacionComponent } from './components/educacion/educacion.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
-import { HardAndSkillsComponent } from './componentes/skills/skills.component';
+import { SkillsComponent } from './componentes/skills/skills.component';
 
 @NgModule({
   declarations: [

@@ -20,7 +20,7 @@ import { SkillsComponent } from './componentes/skills/skills.component';
     HeaderComponent,
     NavComponent,
     AboutComponent,
-    PrdofileComponent,
+    ProfileComponent,
     SocialLinkComponent,
     ExperienciaComponent,
     EducacionComponent,

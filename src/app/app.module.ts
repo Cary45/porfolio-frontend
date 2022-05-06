@@ -4,6 +4,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NavComponent } from './components/nav/nav.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { AboutComponent } from './components/about/about.component';
 import { SocialLinkComponent } from './components/social-link/social-link.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { EducacionComponent } from './components/educacion/educacion.component';
@@ -17,6 +19,8 @@ import { SkillsComponent } from './componentes/skills/skills.component';
     AppComponent,
     HeaderComponent,
     NavComponent,
+    AboutComponent,
+    PrdofileComponent,
     SocialLinkComponent,
     ExperienciaComponent,
     EducacionComponent,

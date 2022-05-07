@@ -13,6 +13,7 @@ import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { SkillsComponent } from './components/skills/skills.component';
+import { NgxScrollTopModule } from 'ngx-scrolltop';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { SkillsComponent } from './components/skills/skills.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgCircleProgressModule.forRoot({})
+    NgCircleProgressModule.forRoot({}),
+    NgxScrollTopModule
   ],
   providers: [],
   bootstrap: [AppComponent]

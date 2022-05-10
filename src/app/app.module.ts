@@ -15,6 +15,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { SkillsComponent } from './components/skills/skills.component';
 import { NgxScrollTopModule } from 'ngx-scrolltop';
 import { FooterComponent } from './components/footer/footer.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { FooterComponent } from './components/footer/footer.component';
     BannerComponent,
     SkillsComponent,
     FooterComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

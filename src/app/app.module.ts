@@ -36,7 +36,7 @@ import { HomeComponent } from './components/home/home.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgCircleProgressModule.forRoot({}),
+    NgCircleProgressModule.forRoot({"responsive": true}),
     NgxScrollTopModule
   ],
   providers: [],

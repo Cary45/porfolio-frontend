@@ -1,19 +1,21 @@
-<div class="row m-3">
-  <h1 style="text-align: center;">Hard & Soft Skills</h1>
-    <div class="text-center col-9 m-5">
-      <circle-progress
-        [percent]="item.porcentaje"
-        [radius]="100"
-        [subtitle]="item.area"
-        [subtitleColor]="'#000000'"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#0000FF'"
-        [innerStrokeColor]="'#5178B3'"
-        [animation]="true"
-        [animationDuration]="500"
-     *ngFor="let item of skills" ></circle-progress>
-    </div>
+
+  <div class="row m-3">
+    <h1 style="text-align: center;">Hard & Soft Skills</h1>
+      <div *ngFor="let item of skills" class="col-4">
+        <circle-progress
+          [percent]="item.porcentaje"
+          [radius]="100"
+          [subtitle]="item.area"
+          [subtitleColor]="'#000000'"
+          [outerStrokeWidth]="16"
+          [innerStrokeWidth]="8"
+          [outerStrokeColor]="'#0000FF'"
+          [innerStrokeColor]="'#5178B3'"
+          [animation]="true"
+          [animationDuration]="500"
+      ></circle-progress>
+      </div>
+  </div>
 
    <!--<div class="text-center col-sm-4 col-md-4 col-lg-4">
       <circle-progress
@@ -89,4 +91,4 @@
         [animationDuration]="500"
       ></circle-progress>
     </div> -->
-</div>
+

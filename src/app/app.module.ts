@@ -18,6 +18,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { DeletebuttonComponent } from './components/deletebutton/deletebutton.component';
 import { EditbuttonComponent } from './components/editbutton/editbutton.component';
+import { AddbuttonComponent } from './components/addbutton/addbutton.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { EditbuttonComponent } from './components/editbutton/editbutton.componen
     HomeComponent,
     DeletebuttonComponent,
     EditbuttonComponent,
+    AddbuttonComponent,
     
   ],
   imports: [

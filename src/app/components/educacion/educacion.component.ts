@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap'; //importa el servicio de modal
+import { EducacionModalComponent } from '../modales/educacion-modal/educacion-modal.component'; //importa el componente para usarlo como modal
 
 @Component({
   selector: 'app-educacion',
@@ -7,7 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EducacionComponent implements OnInit { 
 
-  constructor() {}
+  //inyecta el servicio de modal
+  constructor(private modalService: NgbModal) {}
 
   ngOnInit(): void {}
   Educacion: any[] = [
@@ -30,4 +33,11 @@ export class EducacionComponent implements OnInit {
       persona: 1,
     },
   ];
+
+  abrirModal(id:number){
+    //utiliza el metodo open de NgbModal para abrir el modal. El parametro es el componente que se va a mostrar en el modal. "centred" se usa para centrar el modal.
+    const modalRef = this.modalService.open(EducacionModalComponent,  { centered: true });        
+    modalRef.componentInstance.id = id;     // pasa el id del elemento que se quiere editar al componente del modal
+  }
+
 }

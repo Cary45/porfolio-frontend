@@ -7,8 +7,12 @@
       </div>
       <div class="col-md-8">
         <div class="card-body"> 
-            
-        <h5 class="card-title">{{Edu.titulo}} <app-editbutton></app-editbutton>   <app-deletebutton></app-deletebutton></h5>
+        <div class="d-flex justify-content-between">
+          <h5 class="card-title">{{Edu.titulo}} </h5>
+            <div>
+              <app-editbutton (click)="abrirModal(Edu.id)" class="me-2"></app-editbutton>   <app-deletebutton></app-deletebutton>
+            </div>            
+        </div>            
           <p class="card-text">{{Edu.institucion}}</p>
           <p class="card-text">{{Edu.instucionurl}}</p>
           <p class="card-text">{{Edu.fechafin}}</p>

@@ -21,6 +21,7 @@ import { HomeComponent } from './components/home/home.component';
 import { DeletebuttonComponent } from './components/deletebutton/deletebutton.component';
 import { EditbuttonComponent } from './components/editbutton/editbutton.component';
 import { AddbuttonComponent } from './components/addbutton/addbutton.component';
+import { EducacionModalComponent } from './components/modales/educacion-modal/educacion-modal.component';
 
 
 
@@ -42,6 +43,7 @@ import { AddbuttonComponent } from './components/addbutton/addbutton.component';
     DeletebuttonComponent,
     EditbuttonComponent,
     AddbuttonComponent,
+    EducacionModalComponent,
     
   ],
   imports: [
@@ -52,6 +54,7 @@ import { AddbuttonComponent } from './components/addbutton/addbutton.component';
     NgxScrollTopModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [EducacionModalComponent] //habilia al componente para que se pueda usar en un modal
 })
 export class AppModule { }

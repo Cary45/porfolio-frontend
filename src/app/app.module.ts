@@ -17,6 +17,7 @@ import { NgxScrollTopModule } from 'ngx-scrolltop';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { DeletebuttonComponent } from './components/deletebutton/deletebutton.component';
+import { EditbuttonComponent } from './components/editbutton/editbutton.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { DeletebuttonComponent } from './components/deletebutton/deletebutton.co
     FooterComponent,
     HomeComponent,
     DeletebuttonComponent,
+    EditbuttonComponent,
     
   ],
   imports: [

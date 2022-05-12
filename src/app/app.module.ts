@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NavComponent } from './components/nav/nav.component';
@@ -19,6 +21,8 @@ import { HomeComponent } from './components/home/home.component';
 import { DeletebuttonComponent } from './components/deletebutton/deletebutton.component';
 import { EditbuttonComponent } from './components/editbutton/editbutton.component';
 import { AddbuttonComponent } from './components/addbutton/addbutton.component';
+
+
 
 @NgModule({
   declarations: [
@@ -42,6 +46,7 @@ import { AddbuttonComponent } from './components/addbutton/addbutton.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     NgCircleProgressModule.forRoot({"responsive": true}),
     NgxScrollTopModule

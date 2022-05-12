@@ -1,5 +1,4 @@
 export interface Persona {
-
     idpersona: number;
     nombre: String;
     apellido: String;
@@ -11,5 +10,5 @@ export interface Persona {
     fotourl: String;
     username: String;
     password: String;
-
+    token: String;
 }

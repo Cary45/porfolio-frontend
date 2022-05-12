@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PersonaService } from 'src/app/services/api-rest/persona.service';
+import { Persona } from 'src/app/services/interface/Persona';
 
 @Component({
   selector: 'app-profile',
@@ -6,17 +8,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  labelForContactLink: string = "Ver información de contacto";
+  persona!: Persona;
 
-  constructor() { }
 
-  ngOnInit(): void {}
+  constructor(private personaService:PersonaService) { }
 
-  Profile: any [] = [
-    { nombre: "Juan Minujin",
-      profesion: "Programador",
-      localidad: "Buenos Aires, Provincia de Buenos Aires, (Argentina).",
-      contacto: "Información de contacto"
- }
-  ]
+  ngOnInit(): void {
+    this.getById(1);
+  }
 
+  getById(id: number) {
+    this.personaService.getById(id).subscribe (
+			data => { this.persona = data; }
+		);
+  }
+
+  //moverlo a un servicio
+  isLoggedIn(): boolean {
+    let personaFromStorage: Persona = JSON.parse(localStorage.getItem('persona') || '{}');
+    if(personaFromStorage.token) {
+      return true; // si hay un token, está loggeado
+    }
+    return false; //no está loggeado
+  }
+
+  
 }

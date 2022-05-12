@@ -1,19 +1,20 @@
 <div class="card all-card" id="first-card">
     <div class="info">
-        <div class="info-img">  
-            <img src="https://static.vecteezy.com/system/resources/previews/003/715/527/non_2x/picture-profile-icon-male-icon-human-or-people-sign-and-symbol-vector.jpg" id="profile-img" alt="">  
+        <div class="info-img">
+            <img src="https://static.vecteezy.com/system/resources/previews/003/715/527/non_2x/picture-profile-icon-male-icon-human-or-people-sign-and-symbol-vector.jpg"
+                id="profile-img" alt="">
         </div>
-        <div class="btn-edit"><a href="" class="btn-right"><i class='bx bxs-edit-alt'></i></a></div>
-        <div *ngFor="let Prof of Profile" class="info-text">
-            <h1 class="card-title">{{Prof.nombre}}</h1>
-            <p class="card-text">{{Prof.profesion}}</p>
-            <div id="info-contact" class="localidad grey">{{Prof.localidad}}</div>
-            <span class="localidad" id="contacto"><a href="#">{{Prof.contacto}}</a></span>
+        <!--<div class="btn-edit"><a href="" class="btn-right"><i class='bx bxs-edit-alt'></i></a></div>-->
+        <div class="info-text">
+            <h1 class="card-title">{{persona.nombre}} {{persona.apellido}}</h1>
+            <p class="card-text">{{persona.titulo}}</p>
+            <div id="info-contact" class="localidad grey">{{persona.ubicacion}}</div>
+            <span class="localidad" id="contacto"><a href="#">{{labelForContactLink}}</a></span>
         </div>
         <div class="info-btns">
-            <button class="btn btn-primary" type="button">Tengo interés en...</button>
-            <button class="btn" type="button">Añadir sección</button>
-            <button class="btn" type="button">Más</button>
+            <button *ngIf="isLoggedIn()" class="btn btn-primary" type="button">✏️</button>
+            <!--<button class="btn" type="button">Añadir sección</button>
+            <button class="btn" type="button">Más</button>-->
         </div>
     </div>
 </div>

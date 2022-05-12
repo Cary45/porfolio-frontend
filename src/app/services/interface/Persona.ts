@@ -8,6 +8,7 @@ export interface Persona {
     ubicacion: String;
     acerca: String;
     fotourl: String;
+    coverurl: String;
     username: String;
     password: String;
     token: String;

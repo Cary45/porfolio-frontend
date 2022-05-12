@@ -12,22 +12,20 @@ export class EducacionComponent implements OnInit {
   ngOnInit(): void {}
   Educacion: any[] = [
     {
-      idlaboral: 1,
-      puesto: 'dios',
-      descripcion: 'todo',
-      empresa: 'nada',
-      inicio: null,
-      fin: null,
+      ideducion: 1,
+      titulo: 'Full Stack Developer',
+      fechafin: null,
+      institucion: 'AP',
+      institucionurl: 'www.inti.gob.ar',
       fotourl: "https://via.placeholder.com/150",
       persona: 1,
     },
-      {
-      idlaboral: 1,
-      puesto: 'dios1',
-      descripcion: 'todo1',
-      empresa: 'nada2',
-      inicio:" ayer",
-      fin: "hoy",
+    {
+      ideducion: 2,
+      titulo: 'Padawan',
+      fechafin: '2021-01-01',
+      institucion: 'Jedi Order',
+      institucionurl: 'www.starwars.com',
       fotourl: "https://via.placeholder.com/150",
       persona: 1,
     },

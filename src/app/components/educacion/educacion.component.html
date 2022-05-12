@@ -1,31 +1,14 @@
 <div class="educacion m-3">
   <h1>EDUCACION</h1>
-<<<<<<< HEAD
-  
-  
   <div class="card mb-3" style="max-width: 540px;" *ngFor="let Edu of Educacion">
     <div class="d-flex">
       <div class="col-md-4">
         <img [src]="Edu.fotourl" class="img-fluid rounded-start" alt="imagen1">
-=======
-  <app-deletebutton></app-deletebutton>
-  <app-editbutton></app-editbutton>
-  <div class="card mb-3">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="" class="img-fluid rounded-start" alt="imagen1">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">TITULO1</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">PERIODO</small></p>
->>>>>>> e8071940b413e761bf2c13ab95b70c666fbf5caf
       </div>
       <div class="col-md-8">
         <div class="card-body"> 
             
-        <h5 class="card-title">{{Edu.titulo}} <app-deletebutton></app-deletebutton></h5>
+        <h5 class="card-title">{{Edu.titulo}} <app-editbutton></app-editbutton>   <app-deletebutton></app-deletebutton></h5>
           <p class="card-text">{{Edu.institucion}}</p>
           <p class="card-text">{{Edu.instucionurl}}</p>
           <p class="card-text">{{Edu.fechafin}}</p>

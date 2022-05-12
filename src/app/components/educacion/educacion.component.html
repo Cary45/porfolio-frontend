@@ -1,46 +1,21 @@
 <div class="educacion m-3">
   <h1>EDUCACION</h1>
-  <app-deletebutton></app-deletebutton>
-  <div class="card mb-3">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="" class="img-fluid rounded-start" alt="imagen1">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">TITULO1</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">PERIODO</small></p>
+  
+  
+  <div class="card mb-3" style="max-width: 540px;" *ngFor="let Edu of Educacion">
+    <div class="d-flex">
+      <div class="col-md-4">
+        <img [src]="Edu.fotourl" class="img-fluid rounded-start" alt="imagen1">
       </div>
+      <div class="col-md-8">
+        <div class="card-body"> 
+            
+        <h5 class="card-title">{{Edu.titulo}} <app-deletebutton></app-deletebutton></h5>
+          <p class="card-text">{{Edu.institucion}}</p>
+          <p class="card-text">{{Edu.instucionurl}}</p>
+          <p class="card-text">{{Edu.fechafin}}</p>
+        </div>  
     </div>
+    
   </div>
   </div>
-<div class="card mb-3">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src=""class="img-fluid rounded-start" alt="imagen2">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">TITULO2</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">PERIODO</small></p>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="card mb-3">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src=""class="img-fluid rounded-start" alt="imagen3">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">TITULO3</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">PERIODO</small></p>
-      </div>
-    </div>
-  </div>
-</div>
-</div>

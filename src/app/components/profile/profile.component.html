@@ -2,8 +2,12 @@
 <app-banner [url]="persona.coverurl"></app-banner>
 
 <div class="card all-card" id="first-card">
+   
     <div class="info">
         <div class="info-img">
+            <div class="d-flex justify-content-center" style="background-color: blueviolet">
+              <app-editbutton class="me-2" style="background-color: red;"></app-editbutton>
+           </div>               
             <img [src]="persona.fotourl"
                 id="profile-img" alt="Foto de perfil de {{persona.nombre}}">
         </div>

@@ -22,6 +22,7 @@ import { DeletebuttonComponent } from './components/deletebutton/deletebutton.co
 import { EditbuttonComponent } from './components/editbutton/editbutton.component';
 import { AddbuttonComponent } from './components/addbutton/addbutton.component';
 import { EducacionModalComponent } from './components/modales/educacion-modal/educacion-modal.component';
+import { ExperiencaModalComponent } from './components/modales/experienca-modal/experienca-modal.component';
 
 
 
@@ -44,6 +45,7 @@ import { EducacionModalComponent } from './components/modales/educacion-modal/ed
     EditbuttonComponent,
     AddbuttonComponent,
     EducacionModalComponent,
+    ExperiencaModalComponent,
     
   ],
   imports: [
@@ -55,6 +57,6 @@ import { EducacionModalComponent } from './components/modales/educacion-modal/ed
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [EducacionModalComponent] //habilia al componente para que se pueda usar en un modal
+  entryComponents: [EducacionModalComponent, ExperiencaModalComponent] //habilia al componente para que se pueda usar en un modal
 })
 export class AppModule { }

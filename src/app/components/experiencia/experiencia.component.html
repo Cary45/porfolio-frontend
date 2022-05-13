@@ -36,7 +36,7 @@
                   <h5>{{Exp.empresa}}</h5>
                   <p class="card-text">{{Exp.descripcion}}</p>
                   <div>
-                    <app-editbutton class="me-2"></app-editbutton>   <app-deletebutton></app-deletebutton>
+                    <app-editbutton (click)="abrirModal(Exp.idlaboral)" class="me-2"></app-editbutton>   <app-deletebutton></app-deletebutton>
                   </div>            
                 </div>
               </div>

@@ -2,11 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'app-experienca-modal',
-  templateUrl: './experienca-modal.component.html',
-  styleUrls: ['./experienca-modal.component.css']
+  selector: 'app-experiencia-modal',
+  templateUrl: './experiencia-modal.component.html',
+  styleUrls: ['./experiencia-modal.component.css']
 })
-export class ExperiencaModalComponent implements OnInit {
+export class ExperienciaModalComponent implements OnInit {
 
   @Input()  id!:number; //recibe el id del elemento que se quiere editar
 

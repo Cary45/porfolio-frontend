@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ExperienciaService } from 'src/app/services/api-rest/experiencia.service';
 import { Laboral } from 'src/app/services/interface/Laboral';
-import { ExperiencaModalComponent } from '../modales/experienca-modal/experienca-modal.component';
+import { ExperienciaModalComponent } from '../modales/experiencia-modal/experiencia-modal.component';
 
 @Component({
   selector: 'app-experiencia',
@@ -69,7 +69,7 @@ export class ExperienciaComponent implements OnInit {
 
   abrirModal(id:any){
     //utiliza el metodo open de NgbModal para abrir el modal. El parametro es el componente que se va a mostrar en el modal. "centred" se usa para centrar el modal.
-    const modalRef = this.modalService.open(ExperiencaModalComponent, { centered: true }   );   //{ centered: true }     
+    const modalRef = this.modalService.open(ExperienciaModalComponent, { centered: true }   );   //{ centered: true }     
     modalRef.componentInstance.id = id;     // pasa el id del elemento que se quiere editar al componente del modal
   }
 }

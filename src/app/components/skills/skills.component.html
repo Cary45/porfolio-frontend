@@ -4,11 +4,11 @@
     <div class="d-flex justify-content-center" style="background-color: pink">
          <app-addbutton class="me-5"></app-addbutton> <app-editbutton class="me-2"></app-editbutton>   <app-deletebutton></app-deletebutton>
     </div>   
-      <div *ngFor="let item of skills" class="col-4">
+      <div *ngFor="let item of skill" class="col-3">
         <circle-progress
-          [percent]="item.porcentaje"
+          [percent]="item.dominio"
           [radius]="100"
-          [subtitle]="item.area"
+          [subtitle]="item.titulo"
           [subtitleColor]="'#000000'"
           [outerStrokeWidth]="16"
           [innerStrokeWidth]="8"

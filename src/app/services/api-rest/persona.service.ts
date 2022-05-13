@@ -18,12 +18,12 @@ export class PersonaService {
 
   //terminar en algun momento
   update(id: number, persona: any): Observable<any>{
-    return this.http.put(`/---------/${id}`, persona);
+    return this.http.put(`http://comunidad-apirest.herokuapp.com/api/personas/${id}`, persona);
   }
 
   //terminar en algun momento
   delete(id: number): Observable<any>{
-    return this.http.delete(`/---------/${id}`);
+    return this.http.delete(`http://comunidad-apirest.herokuapp.com/api/personas/${id}`);
   }
 
 

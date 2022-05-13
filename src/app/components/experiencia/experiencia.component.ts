@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ExperienciaService } from 'src/app/services/api-rest/experiencia.service';
+import { Laboral } from 'src/app/services/interface/Laboral';
 
 @Component({
   selector: 'app-experiencia',
@@ -6,9 +8,40 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./experiencia.component.css'],
 })
 export class ExperienciaComponent implements OnInit {
-  constructor() { }
+  constructor(private experienciaService:ExperienciaService)  { }
 
-  ngOnInit(): void { }
+  experiencia!: Laboral [] ;
+
+  getById(id: number) {
+    this.experienciaService.getById(id).subscribe (
+			data => { this.experiencia = data; }
+		);
+  }
+
+  getAll() {
+    this.experienciaService.getAll().subscribe (
+			data => { this.experiencia = data; }
+		);
+  }
+  delete(id: number) {
+    this.experienciaService.delete(id).subscribe (
+			data => { this.experiencia = data; }
+		);
+  }
+
+  save(laboral:any) {
+    this.experienciaService.save(laboral).subscribe (
+			data => { this.experiencia = data; }
+		);
+  }
+
+  update(id: number, laboral: any) {
+    this.experienciaService.update(id,laboral).subscribe (
+			data => { this.experiencia = data; }
+		);
+  }
+
+  ngOnInit(): void {this.getAll() }
   Experiencia: any[] = [
     {
       idlaboral: 1,
@@ -31,4 +64,6 @@ export class ExperienciaComponent implements OnInit {
       persona: 1,
     },
   ];
+
+
 }

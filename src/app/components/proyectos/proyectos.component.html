@@ -21,17 +21,17 @@
   <app-addbutton></app-addbutton>
   <br>
   <br>
-  <div class="card mb-3" style="max-width: 540px;" *ngFor="let Pro of Proyectos">
+  <div class="card mb-3" style="max-width: 540px;" *ngFor="let Pro of proyecto">
     <div class="row g-0">
       <div class="col-md-4">
-        <img [src]="Pro.fotourl" class="img-fluid rounded-start" alt="...">
+        <img [src]="Pro.url" class="img-fluid rounded-start" alt="...">
       </div>
       <div class="col-md-8">
         <div class="card-body">
           <div class="d-flex justify-content-between">
-          <h5 class="card-title">{{Pro.proyecto}}</h5><app-deletebutton></app-deletebutton><app-editbutton></app-editbutton>
+          <h5 class="card-title">{{Pro.titulo}}</h5><app-deletebutton></app-deletebutton><app-editbutton></app-editbutton>
         </div>
-          <p class="card-text">{{Pro.descrip}}</p>
+          <p class="card-text">{{Pro.descripcion}}</p>
           <a href="https://github.com/" class="btn btn-primary" target="_blank">Click here</a>
         </div>
       </div>

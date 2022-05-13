@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProyectosService } from 'src/app/services/api-rest/proyectos.service';
+import { Proyecto } from 'src/app/services/interface/Proyecto';
 
 @Component({
   selector: 'app-proyectos',
@@ -7,9 +9,43 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProyectosComponent implements OnInit {
 
-  constructor() { }
+  
+  constructor(private proyectoService:ProyectosService)  { }
 
-  ngOnInit(): void {}
+  proyecto!: Proyecto [] ;
+
+  getById(id: number) {
+    this.proyectoService.getById(id).subscribe (
+			data => { this.proyecto = data; }
+		);
+  }
+
+  getAll() {
+    this.proyectoService.getAll().subscribe (
+			data => { this.proyecto = data; }
+		);
+  }
+  delete(id: number) {
+    this.proyectoService.delete(id).subscribe (
+			data => { this.proyecto = data; }
+		);
+  }
+
+  save(proyecto:any) {
+    this.proyectoService.save(proyecto).subscribe (
+			data => { this.proyecto = data; }
+		);
+  }
+
+  update(id: number, proyecto: any) {
+    this.proyectoService.update(id,proyecto).subscribe (
+			data => { this.proyecto = data; }
+		);
+  }
+
+
+
+  ngOnInit(): void {this.getAll()}
 
     
     Proyectos: any[] = [

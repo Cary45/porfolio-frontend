@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap'; //importa el servicio de modal
+import { EducacionService } from 'src/app/services/api-rest/educacion.service';
+import { Educacion } from 'src/app/services/interface/Educacion';
 import { EducacionModalComponent } from '../modales/educacion-modal/educacion-modal.component'; //importa el componente para usarlo como modal
 
 @Component({
@@ -10,9 +12,41 @@ import { EducacionModalComponent } from '../modales/educacion-modal/educacion-mo
 export class EducacionComponent implements OnInit { 
 
   //inyecta el servicio de modal
-  constructor(private modalService: NgbModal) {}
+  constructor(private modalService: NgbModal, private educacionService:EducacionService) {}
+  
+  educacion!: Educacion [] ;
 
-  ngOnInit(): void {}
+  getById(id: number) {
+    this.educacionService.getById(id).subscribe (
+			data => { this.educacion = data; }
+		);
+  }
+
+  getAll() {
+    this.educacionService.getAll().subscribe (
+			data => { this.educacion = data; }
+		);
+  }
+  delete(id: number) {
+    this.educacionService.delete(id).subscribe (
+			data => { this.educacion = data; }
+		);
+  }
+
+  save(educacion:any) {
+    this.educacionService.save(educacion).subscribe (
+			data => { this.educacion = data; }
+		);
+  }
+
+  update(id: number, educacion: any) {
+    this.educacionService.update(id,educacion).subscribe (
+			data => { this.educacion = data; }
+		);
+  }
+
+
+  ngOnInit(): void {this.getAll()}
   Educacion: any[] = [
     {
       ideducion: 1,
@@ -34,7 +68,7 @@ export class EducacionComponent implements OnInit {
     },
   ];
 
-  abrirModal(id:number){
+  abrirModal(id:any){
     //utiliza el metodo open de NgbModal para abrir el modal. El parametro es el componente que se va a mostrar en el modal. "centred" se usa para centrar el modal.
     const modalRef = this.modalService.open(EducacionModalComponent,  { centered: true });        
     modalRef.componentInstance.id = id;     // pasa el id del elemento que se quiere editar al componente del modal

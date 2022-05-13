@@ -1,6 +1,7 @@
 
-  <div class="row m-3">
+<div class="row m-3">
     <h1 style="text-align: center;">Hard & Soft Skills</h1>
+    <app-addbutton></app-addbutton>
       <div *ngFor="let item of skills" class="col-4">
         <circle-progress
           [percent]="item.porcentaje"

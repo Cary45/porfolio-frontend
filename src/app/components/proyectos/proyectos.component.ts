@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ProyectosService } from 'src/app/services/api-rest/proyectos.service';
 import { Proyecto } from 'src/app/services/interface/Proyecto';
+import { ProyectoModalComponent } from '../modales/proyecto-modal/proyecto-modal.component';
 
 @Component({
   selector: 'app-proyectos',
@@ -8,9 +10,9 @@ import { Proyecto } from 'src/app/services/interface/Proyecto';
   styleUrls: ['./proyectos.component.css']
 })
 export class ProyectosComponent implements OnInit {
-
   
-  constructor(private proyectoService:ProyectosService)  { }
+constructor(private proyectoService:ProyectosService, private modalService: NgbModal)  { }
+
 
   proyecto!: Proyecto [] ;
 
@@ -66,4 +68,10 @@ export class ProyectosComponent implements OnInit {
       },
       
     ];
+    abrirModal(id:any){
+      //utiliza el metodo open de NgbModal para abrir el modal. El parametro es el componente que se va a mostrar en el modal. "centred" se usa para centrar el modal.
+      const modalRef = this.modalService.open(ProyectoModalComponent, { centered: true }   );   //{ centered: true }     
+      modalRef.componentInstance.id = id;     // pasa el id del elemento que se quiere editar al componente del modal
+    }
   }
+  

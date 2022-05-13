@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { SkillService } from 'src/app/services/api-rest/skill.service';
 import { Skill } from 'src/app/services/interface/Skill';
+import { SkillsModalComponent } from '../modales/skills-modal/skills-modal.component';
 
 @Component({
   selector: 'app-skills',
@@ -12,7 +14,7 @@ export class SkillsComponent implements OnInit {
   
 
  //inyecta el servicio de modal
- constructor(private skillService:SkillService) {}
+ constructor(private skillService:SkillService,  private modalService: NgbModal) {}
   
  skill!: any [] ;
 
@@ -68,4 +70,11 @@ export class SkillsComponent implements OnInit {
 {   porcentaje: 32,
   area: "ANGULAR"
 }*/]; 
+
+abrirModal(){
+  //utiliza el metodo open de NgbModal para abrir el modal. El parametro es el componente que se va a mostrar en el modal. "centred" se usa para centrar el modal.
+  const modalRef = this.modalService.open(SkillsModalComponent, { centered: true }   );   //{ centered: true }     
+  //modalRef.componentInstance.id = id;      pasa el id del elemento que se quiere editar al componente del modal
+}
+
 }

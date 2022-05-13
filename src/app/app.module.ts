@@ -23,6 +23,8 @@ import { EditbuttonComponent } from './components/editbutton/editbutton.componen
 import { AddbuttonComponent } from './components/addbutton/addbutton.component';
 import { EducacionModalComponent } from './components/modales/educacion-modal/educacion-modal.component';
 import { ExperienciaModalComponent } from './components/modales/experiencia-modal/experiencia-modal.component';
+import { ProyectoModalComponent } from './components/modales/proyecto-modal/proyecto-modal.component';
+import { SkillsModalComponent } from './components/modales/skills-modal/skills-modal.component';
 
 
 
@@ -46,6 +48,8 @@ import { ExperienciaModalComponent } from './components/modales/experiencia-moda
     AddbuttonComponent,
     EducacionModalComponent,
     ExperienciaModalComponent,
+    ProyectoModalComponent,
+    SkillsModalComponent,
     
   ],
   imports: [
@@ -57,6 +61,6 @@ import { ExperienciaModalComponent } from './components/modales/experiencia-moda
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [EducacionModalComponent, ExperienciaModalComponent] //habilia al componente para que se pueda usar en un modal
+  entryComponents: [EducacionModalComponent, ExperienciaModalComponent, ProyectoModalComponent, SkillsModalComponent] //habilia al componente para que se pueda usar en un modal
 })
 export class AppModule { }

@@ -3,7 +3,7 @@
       <p class="card-text">{{Abt.descripcion}}<app-addbutton></app-addbutton></p>
 
       <div>
-            <app-editbutton class="me-2"></app-editbutton> 
+            <app-editbutton (click)="abrirModal(Abt.idpersona)" class="me-2"></app-editbutton> 
           </div>  
           
       <p>{{Abt.texto}}</p>

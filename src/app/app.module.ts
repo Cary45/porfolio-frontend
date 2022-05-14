@@ -25,6 +25,7 @@ import { EducacionModalComponent } from './components/modales/educacion-modal/ed
 import { ExperienciaModalComponent } from './components/modales/experiencia-modal/experiencia-modal.component';
 import { ProyectoModalComponent } from './components/modales/proyecto-modal/proyecto-modal.component';
 import { SkillsModalComponent } from './components/modales/skills-modal/skills-modal.component';
+import { AboutModalComponent } from './components/modales/about-modal/about-modal.component';
 
 
 
@@ -50,6 +51,7 @@ import { SkillsModalComponent } from './components/modales/skills-modal/skills-m
     ExperienciaModalComponent,
     ProyectoModalComponent,
     SkillsModalComponent,
+    AboutModalComponent,
     
   ],
   imports: [
@@ -61,6 +63,6 @@ import { SkillsModalComponent } from './components/modales/skills-modal/skills-m
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [EducacionModalComponent, ExperienciaModalComponent, ProyectoModalComponent, SkillsModalComponent] //habilia al componente para que se pueda usar en un modal
+  entryComponents: [EducacionModalComponent, ExperienciaModalComponent, ProyectoModalComponent, SkillsModalComponent, AboutModalComponent] //habilia al componente para que se pueda usar en un modal
 })
 export class AppModule { }

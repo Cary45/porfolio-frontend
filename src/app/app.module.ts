@@ -26,6 +26,7 @@ import { ExperienciaModalComponent } from './components/modales/experiencia-moda
 import { ProyectoModalComponent } from './components/modales/proyecto-modal/proyecto-modal.component';
 import { SkillsModalComponent } from './components/modales/skills-modal/skills-modal.component';
 import { AboutModalComponent } from './components/modales/about-modal/about-modal.component';
+import { PagErrorComponent } from './components/pag-error/pag-error.component';
 
 
 
@@ -52,6 +53,7 @@ import { AboutModalComponent } from './components/modales/about-modal/about-moda
     ProyectoModalComponent,
     SkillsModalComponent,
     AboutModalComponent,
+    PagErrorComponent,
     
   ],
   imports: [

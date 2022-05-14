@@ -25,7 +25,8 @@ export class AboutComponent implements OnInit {
         data => { this.persona = data; }
       );
     }
-    ngOnInit(): void {this.getById(1) }
+    ngOnInit(): void {
+      this.getById(1) }
      
   About: any[] = [
   {   acercade: "Acerca de",

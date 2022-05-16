@@ -67,7 +67,7 @@ import { IniciarSesionComponent } from './components/iniciar-sesion/iniciar-sesi
     AppRoutingModule,
     NgCircleProgressModule.forRoot({"responsive": true}),
     NgxScrollTopModule,
-    ReactiveFormsModule
+    ReactiveFormsModule //se importa para usar en los formularios reactivos
   ],
   providers: [],
   bootstrap: [AppComponent],

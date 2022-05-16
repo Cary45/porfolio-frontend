@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/api-rest/user.service';
 import { Persona } from 'src/app/services/interface/Persona';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'; //importar para los formularios reactivos
 
 
 @Component({
@@ -12,10 +12,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class IniciarSesionComponent implements OnInit {
   persona!: Persona;
-  formulario: FormGroup;
-  constructor(private router: Router, private userService: UserService, private formBuilder: FormBuilder) {
+  formulario: FormGroup; // crear una variable para el formulario... TODO ESTA EN LA MASTERCLASS 8.1
+
+  constructor(private router: Router, private userService: UserService, private formBuilder: FormBuilder) { //inyectar formBuilder para los formularios reactivos
+    // crea el formulario con los campos necesarios
     this.formulario = this.formBuilder.group({
-      username: ['', Validators.required],
+      username: ['', Validators.required], 
       password: ['', Validators.required]
     });
    }

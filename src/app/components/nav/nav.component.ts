@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginService } from 'src/app/services/api-rest/login.service';
 
 @Component({
   selector: 'app-nav',
@@ -32,7 +33,7 @@ export class NavComponent implements OnInit {
     }
   ];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private loginService:LoginService) { }
 
   ngOnInit(): void {
   }
@@ -40,5 +41,8 @@ export class NavComponent implements OnInit {
   iniciarSesion(){
     this.router.navigate(['login']);   
   }
+  isLoggedIn(): boolean {
 
+    return this.loginService.isLoggedIn();  
+  }
 }

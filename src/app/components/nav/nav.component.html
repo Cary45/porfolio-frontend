@@ -8,5 +8,6 @@
     </ul>
 
     <!-- Login Btn -->
-    <button type="button" class="btn btn-primary" (click)="iniciarSesion()">Login</button>
+    <button type="button" class="btn btn-primary" (click)="iniciarSesion()" *ngIf="!isLoggedIn()">Login</button>
+    <button type="button" class="btn btn-primary" (click)="iniciarSesion()" *ngIf="isLoggedIn()">Logout</button>
 </nav>

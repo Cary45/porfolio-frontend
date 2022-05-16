@@ -6,7 +6,7 @@
     <div class="info">
         <div class="info-img">
             <div class="d-flex justify-content-center" style="background-color: blueviolet">
-              <app-editbutton (click)="abrirModal(persona.idpersona)"class="me-2" style="background-color: red;"></app-editbutton>
+              <app-editbutton *ngIf="isLoggedIn()" (click)="abrirModal(persona.idpersona)"class="me-2" style="background-color: red;"></app-editbutton>
            </div>               
             <img [src]="persona.fotourl"
                 id="profile-img" alt="Foto de perfil de {{persona.nombre}}">

@@ -18,7 +18,7 @@
   </div>
   <br>-->
   <h2>Proyectos</h2>
-  <app-addbutton></app-addbutton>
+  <app-addbutton *ngIf="isLoggedIn()"></app-addbutton>
   <br>
   <br>
   <div class="card mb-3" style="max-width: 540px;" *ngFor="let Pro of proyecto">
@@ -29,7 +29,7 @@
       <div class="col-md-8">
         <div class="card-body">
           <div class="d-flex justify-content-between">
-          <h5 class="card-title">{{Pro.titulo}}</h5><app-deletebutton></app-deletebutton><app-editbutton (click)="abrirModal(Pro.idproyecto)"></app-editbutton>
+          <h5 class="card-title">{{Pro.titulo}}</h5><app-deletebutton *ngIf="isLoggedIn()"></app-deletebutton><app-editbutton *ngIf="isLoggedIn()" (click)="abrirModal(Pro.idproyecto)"></app-editbutton>
         </div>
           <p class="card-text">{{Pro.descripcion}}</p>
           <a href="https://github.com/" class="btn btn-primary" target="_blank">Click here</a>

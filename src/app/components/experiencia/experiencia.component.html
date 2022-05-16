@@ -19,7 +19,7 @@
   </ul>
 </div> -->
   <ul id="experiencia">
-    <app-addbutton></app-addbutton>
+    <app-addbutton *ngIf="isLoggedIn()"></app-addbutton>
     <br>
     <br>
     <li *ngFor="let Exp of experiencia">
@@ -36,7 +36,7 @@
                   <h5>{{Exp.empresa}}</h5>
                   <p class="card-text">{{Exp.descripcion}}</p>
                   <div>
-                    <app-editbutton (click)="abrirModal(Exp.idlaboral)" class="me-2"></app-editbutton>   <app-deletebutton></app-deletebutton>
+                    <app-editbutton *ngIf="isLoggedIn()" (click)="abrirModal(Exp.idlaboral)" class="me-2"></app-editbutton>   <app-deletebutton *ngIf="isLoggedIn()" ></app-deletebutton>
                   </div>            
                 </div>
               </div>

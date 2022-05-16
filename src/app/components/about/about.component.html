@@ -1,9 +1,9 @@
 <div *ngFor="let Abt of About" id="about" class="card all-card">   
       <h1>{{Abt.acercade}}</h1>
-      <p class="card-text">{{Abt.descripcion}}<app-addbutton></app-addbutton></p>
+      <p class="card-text">{{Abt.descripcion}}<app-addbutton *ngIf="isLoggedIn()"></app-addbutton></p>
 
       <div>
-            <app-editbutton (click)="abrirModal(Abt.idpersona)" class="me-2"></app-editbutton> 
+            <app-editbutton *ngIf="isLoggedIn()" (click)="abrirModal(Abt.idpersona)" class="me-2"></app-editbutton> 
           </div>  
           
       <p>{{Abt.texto}}</p>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { LoginService } from 'src/app/services/api-rest/login.service';
 import { PersonaService } from 'src/app/services/api-rest/persona.service';
 import { Persona } from 'src/app/services/interface/Persona';
 import { ProfileModalComponent } from '../modales/profile-modal/profile-modal.component';
@@ -14,7 +15,7 @@ export class ProfileComponent implements OnInit {
   persona!: Persona;
 
 
-  constructor(private personaService:PersonaService,private modalService: NgbModal) { }
+  constructor(private personaService:PersonaService,private modalService: NgbModal, private loginService:LoginService) { }
 
   getById(id: number) {
     this.personaService.getById(1).subscribe (
@@ -47,12 +48,7 @@ export class ProfileComponent implements OnInit {
 
   //moverlo a un servicio
   isLoggedIn(): boolean {
-    let personaFromStorage: Persona = JSON.parse(localStorage.getItem('persona') || '{}');
-    if(personaFromStorage.token) {
-      return true; // si hay un token, está loggeado
-    }
-    return false; //no está loggeado
-  }
 
-  
+  return this.loginService.isLoggedIn();  
+}
 }

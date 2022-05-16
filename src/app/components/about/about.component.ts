@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { LoginService } from 'src/app/services/api-rest/login.service';
 import { PersonaService } from 'src/app/services/api-rest/persona.service';
 import { Persona } from 'src/app/services/interface/Persona';
 import { AboutModalComponent } from '../modales/about-modal/about-modal.component';
@@ -10,7 +11,7 @@ import { AboutModalComponent } from '../modales/about-modal/about-modal.componen
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
- constructor(private personaService:PersonaService, private modalService: NgbModal)  { }
+ constructor(private personaService:PersonaService, private modalService: NgbModal, private loginService:LoginService)  { }
 
   persona!: Persona [];
    
@@ -39,4 +40,9 @@ abrirModal(id:any){
   const modalRef = this.modalService.open(AboutModalComponent, { centered: true }   );   //{ centered: true }     
   modalRef.componentInstance.id = id;     // pasa el id del elemento que se quiere editar al componente del modal
 }
+isLoggedIn(): boolean {
+
+  return this.loginService.isLoggedIn();  
+}
+
 }

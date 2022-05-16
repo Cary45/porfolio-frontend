@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap'; //importa el servicio de modal
 import { EducacionService } from 'src/app/services/api-rest/educacion.service';
+import { LoginService } from 'src/app/services/api-rest/login.service';
 import { Educacion } from 'src/app/services/interface/Educacion';
 import { EducacionModalComponent } from '../modales/educacion-modal/educacion-modal.component'; //importa el componente para usarlo como modal
 
@@ -12,7 +13,7 @@ import { EducacionModalComponent } from '../modales/educacion-modal/educacion-mo
 export class EducacionComponent implements OnInit { 
 
   //inyecta el servicio de modal
-  constructor(private modalService: NgbModal, private educacionService:EducacionService) {}
+  constructor(private modalService: NgbModal, private educacionService:EducacionService, private loginService:LoginService) {}
   
   educacion!: Educacion [] ;
 
@@ -73,5 +74,8 @@ export class EducacionComponent implements OnInit {
     const modalRef = this.modalService.open(EducacionModalComponent,  { centered: true });        
     modalRef.componentInstance.id = id;     // pasa el id del elemento que se quiere editar al componente del modal
   }
+  isLoggedIn(): boolean {
 
+    return this.loginService.isLoggedIn();  
+  }
 }

@@ -14,7 +14,7 @@ export class UserService {
 
   }
 
-  login(username: string, password: string): Observable<any> {
+  login(username: string, password: string): Observable<any> {  
     this.user.username = username;
     this.user.password = password;
 	  return this.http.post(`https://comunidad-apirest.herokuapp.com/api/login`, this.user);

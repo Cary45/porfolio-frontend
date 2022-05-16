@@ -28,6 +28,8 @@ import { SkillsModalComponent } from './components/modales/skills-modal/skills-m
 import { AboutModalComponent } from './components/modales/about-modal/about-modal.component';
 import { PagErrorComponent } from './components/pag-error/pag-error.component';
 import { ProfileModalComponent } from './components/modales/profile-modal/profile-modal.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { IniciarSesionComponent } from './components/iniciar-sesion/iniciar-sesion.component';
 
 
 
@@ -56,6 +58,7 @@ import { ProfileModalComponent } from './components/modales/profile-modal/profil
     AboutModalComponent,
     PagErrorComponent,
     ProfileModalComponent,
+    IniciarSesionComponent
     
   ],
   imports: [
@@ -63,7 +66,8 @@ import { ProfileModalComponent } from './components/modales/profile-modal/profil
     HttpClientModule,
     AppRoutingModule,
     NgCircleProgressModule.forRoot({"responsive": true}),
-    NgxScrollTopModule
+    NgxScrollTopModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

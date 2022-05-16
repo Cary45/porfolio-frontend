@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/api-rest/user.service';
 import { Persona } from 'src/app/services/interface/Persona';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -11,14 +12,28 @@ import { Persona } from 'src/app/services/interface/Persona';
 })
 export class IniciarSesionComponent implements OnInit {
   persona!: Persona;
-  constructor(private router: Router, private userService: UserService) { }
+  formulario: FormGroup;
+  constructor(private router: Router, private userService: UserService, private formBuilder: FormBuilder) {
+    this.formulario = this.formBuilder.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required]
+    });
+   }
+
+   get username() {
+    return this.formulario.get('username');
+  }
+
+    get password() {
+    return this.formulario.get('password');
+  }
 
   ngOnInit(): void {
     //probablemente acá quiera cargar algo...
   }
 
   loginFalso() {
-    //pedir al post...
+    //pedir al post...    
     this.userService.login("olivia", "1234").subscribe(
       data => {
         this.persona = data;
@@ -29,9 +44,9 @@ export class IniciarSesionComponent implements OnInit {
     );
   }
 
-  login(username: string, password: string) {
-    //pedir al post...
-    this.userService.login(username, password).subscribe(
+  login() {
+    //pedir al post...    
+    this.userService.login( this.formulario.value.username, this.formulario.value.password).subscribe(
       data => {
         this.persona = data;
         console.log(this.persona);

@@ -1,4 +1,13 @@
-<p>about-modal works!</p>
+<form [formGroup]="formulario">
+    <div class="input-group flex-nowrap mt-2">
+        <span class="input-group-text">Titulo: </span>
+        <input type="text" class="form-control" placeholder= "Titulo" formControlName="titulo">
+    </div>
+
+    <div class="input-group flex-nowrap mt-2">
+        <span class="input-group-text">Acerca de mi: </span>
+        <input type="text" class="form-control" placeholder="acerca de mi" formControlName="acerca" >
+    </div>
 
 <div>
     <button class="btn btn-primary" (click)="cerrarModal()">Cerrar</button>

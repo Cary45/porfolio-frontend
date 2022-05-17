@@ -1,5 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { Persona } from 'src/app/services/interface/Persona';
+import { PersonaService } from 'src/app/services/api-rest/persona.service';
+import { FormBuilder, FormGroup } from '@angular/forms';
+
 
 @Component({
   selector: 'app-about-modal',
@@ -10,13 +14,45 @@ export class AboutModalComponent implements OnInit {
   
   @Input()  id!:number; 
 
-  constructor(public activeModal: NgbActiveModal) { }
+  persona!:Persona;
+  formulario!:FormGroup
+
+  constructor(public activeModal: NgbActiveModal, private personaService:PersonaService, private fb: FormBuilder) { 
+    this.formulario = this.fb.group({
+    idpersona: [''],
+    titulo: [''],
+    acerca: [''],
+    persona: [''],
+
+  })
+
+}
 
   ngOnInit(): void {
+    this.getById(this.id)
   }
 
   cerrarModal(){
     this.activeModal.close();
   }
+  getById(id: number) {
+    // console.log(this.id)
+     this.personaService.getById(id).subscribe (
+             data => {
+          this.persona = data; 
+          //console.log(this.proyecto)
+          this.editarForm(this.persona)
+         }
+         );
+
+}
+editarForm(abt:any){
+  this.formulario.setValue( {
+    idpersona: abt.idpersona,
+    titulo: abt.titulo,
+    acerca: abt.acerca,
+    persona: abt.persona
+  });
+}
 
 }

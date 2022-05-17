@@ -16,6 +16,7 @@ export class ProyectoModalComponent implements OnInit {
 
   proyecto!:Proyecto;
   formulario!:FormGroup
+  
   constructor(public activeModal: NgbActiveModal, private proyectoService:ProyectosService, private fb: FormBuilder) {
     this.formulario = this.fb.group({
       idproyecto: [''],

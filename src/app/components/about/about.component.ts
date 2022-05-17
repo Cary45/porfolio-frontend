@@ -13,11 +13,13 @@ import { AboutModalComponent } from '../modales/about-modal/about-modal.componen
 export class AboutComponent implements OnInit {
  constructor(private personaService:PersonaService, private modalService: NgbModal, private loginService:LoginService)  { }
 
-  persona!: Persona [];
+  persona!: Persona ;
    
   getById(id: number) {
     this.personaService.getById(1).subscribe (
-			data => { this.persona = data; }
+			data => { this.persona = data;
+      //console.log(this.persona)        
+      }
 		);
   }
   
@@ -29,14 +31,18 @@ export class AboutComponent implements OnInit {
     ngOnInit(): void {
       this.getById(1) }
      
+
+  /*de aca tomada los datos    
   About: any[] = [
   {   acercade: "Acerca de",
       texto: "Programador fullstack junior freelance."
 
   } 
 ]
+*/
 abrirModal(id:any){
   //utiliza el metodo open de NgbModal para abrir el modal. El parametro es el componente que se va a mostrar en el modal. "centred" se usa para centrar el modal.
+  console.log(id)
   const modalRef = this.modalService.open(AboutModalComponent, { centered: true }   );   //{ centered: true }     
   modalRef.componentInstance.id = id;     // pasa el id del elemento que se quiere editar al componente del modal
 }

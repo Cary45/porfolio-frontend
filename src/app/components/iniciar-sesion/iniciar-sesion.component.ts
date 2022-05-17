@@ -39,7 +39,7 @@ export class IniciarSesionComponent implements OnInit {
     this.userService.login("olivia", "1234").subscribe(
       data => {
         this.persona = data;
-        console.log(this.persona);
+        //console.log(this.persona);
         localStorage.setItem("persona", JSON.stringify(this.persona));
         this.volverAlHome();
       }

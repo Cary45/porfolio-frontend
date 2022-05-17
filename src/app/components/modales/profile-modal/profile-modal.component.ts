@@ -19,14 +19,31 @@ export class ProfileModalComponent implements OnInit {
 
   constructor(public activeModal: NgbActiveModal, private personaService:PersonaService, private fb: FormBuilder) {
     this.formulario = this.fb.group({
-  idpersona: [''],
-  nombre: [''],
-  apellido: [''],
-  email: [''],
-  telefono: [''],
-  fotourl: [''],
-  persona: [''],
+  
+      idpersona: [''],
+      nombre: [''],
+      apellido: [''],
+      email: [''],
+      titulo: [''],
+      telefono: [''],
+      ubicacion: [''],
+      acerca: [''],
+      fotourl: [''],
+      coverurl: [''],
+      username: [''],
+      password: [''],
+      token: [''],
 
+
+      /*
+      idpersona: [''],
+      nombre: [''],
+      apellido: [''],
+      email: [''],
+      telefono: [''],
+      fotourl: [''],
+      persona: [''],
+      */
 })
 
 }
@@ -49,8 +66,24 @@ export class ProfileModalComponent implements OnInit {
          );
  
    }
-   editarForm(pro:any){
+   editarForm(pers:any){
      this.formulario.setValue( {
+        idpersona: pers.idpersona,
+        nombre: pers.nombre,
+        apellido: pers.apellido,
+        email: pers.email,
+        titulo: pers.titulo,
+        telefono:  pers.telefono,
+        ubicacion: pers.ubicacion,
+        acerca: pers.acerca,
+        fotourl: pers.fotourl,
+        coverurl: pers.coverurl,
+        username: pers.username,
+        password: pers.password,
+        token: pers.token, 
+      
+      
+      /*
        idpersona: pro.idpersona,
        nombre: pro.nombre,
        apellido: pro.apellido,
@@ -58,7 +91,10 @@ export class ProfileModalComponent implements OnInit {
        telefono: pro.telefono,
        fotourl: pro.fotourl,
        persona: pro.persona
+       */
      });
    }
  
 }
+
+

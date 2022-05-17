@@ -19,10 +19,10 @@ export class AboutModalComponent implements OnInit {
 
   constructor(public activeModal: NgbActiveModal, private personaService:PersonaService, private fb: FormBuilder) { 
     this.formulario = this.fb.group({
-    idpersona: [''],
+    //idpersona: [''],
     titulo: [''],
     acerca: [''],
-    persona: [''],
+   // persona: [''],
 
   })
 
@@ -40,7 +40,7 @@ export class AboutModalComponent implements OnInit {
      this.personaService.getById(id).subscribe (
              data => {
           this.persona = data; 
-          //console.log(this.proyecto)
+          console.log(this.persona)
           this.editarForm(this.persona)
          }
          );
@@ -48,10 +48,10 @@ export class AboutModalComponent implements OnInit {
 }
 editarForm(abt:any){
   this.formulario.setValue( {
-    idpersona: abt.idpersona,
+    //idpersona: abt.idpersona,
     titulo: abt.titulo,
     acerca: abt.acerca,
-    persona: abt.persona
+    //persona: abt.persona
   });
 }
 

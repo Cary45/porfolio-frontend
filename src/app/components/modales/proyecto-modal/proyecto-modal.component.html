@@ -1,4 +1,20 @@
-<p>proyecto-modal works!</p>
-<div>
-    <button class="btn btn-primary" (click)="cerrarModal()">Cerrar</button>
-</div>
+<form [formGroup]="formulario">
+    <div class="input-group flex-nowrap mt-2">
+        <span class="input-group-text">Titulo: </span>
+        <input type="text" class="form-control" placeholder= "Institucion" formControlName="titulo">
+    </div>
+
+    <div class="input-group flex-nowrap mt-2">
+        <span class="input-group-text">Descripcion: </span>
+        <input type="text" class="form-control" placeholder="Titulo" formControlName="descripcion" >
+    </div>
+
+    <div class="input-group flex-nowrap mt-2">
+        <label class="input-group-text texto-titulo">Link: </label>
+        <input type="date" class="form-control" placeholder="fecha egresado" formControlName="url">
+    </div>
+
+    <div>
+        <button class="btn btn-primary" (click)="cerrarModal()">Cerrar</button>
+    </div>
+</form>

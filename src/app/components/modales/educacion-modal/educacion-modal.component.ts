@@ -34,10 +34,7 @@ export class EducacionModalComponent implements OnInit {
     fotourl: String;
     persona: number;
     */
-  
-  
-  
-  
+    
   }
   ngOnInit(): void {
     this.getById(this.id)

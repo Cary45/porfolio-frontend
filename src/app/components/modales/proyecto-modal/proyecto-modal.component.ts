@@ -18,7 +18,7 @@ export class ProyectoModalComponent implements OnInit {
   formulario!:FormGroup
   constructor(public activeModal: NgbActiveModal, private proyectoService:ProyectosService, private fb: FormBuilder) {
     this.formulario = this.fb.group({
-      ideproyecto: [''],
+      idproyecto: [''],
       titulo: [''],
       descripcion: [''],
       url: [''],
@@ -33,9 +33,6 @@ export class ProyectoModalComponent implements OnInit {
     */
   }
 
-
-
-
   ngOnInit(): void {
     this.getById(this.id)  
   }
@@ -43,12 +40,13 @@ export class ProyectoModalComponent implements OnInit {
   cerrarModal(){
     this.activeModal.close();
   }
+
   getById(id: number) {
-    console.log(this.id)
+   // console.log(this.id)
     this.proyectoService.getById(id).subscribe (
             data => {
          this.proyecto = data; 
-         console.log(this.proyecto)
+         //console.log(this.proyecto)
          this.editarForm(this.proyecto)
         }
         );
@@ -56,10 +54,10 @@ export class ProyectoModalComponent implements OnInit {
   }
   editarForm(pro:any){
     this.formulario.setValue( {
-      ideproyecto: pro.ideproyecto,
+      idproyecto: pro.idproyecto,
       titulo: pro.titulo,
-      descripcion: pro.institucion,
-      url: pro.institucionurl,
+      descripcion: pro.descripcion,
+      url: pro.url,
       persona: pro.persona
     });
   }

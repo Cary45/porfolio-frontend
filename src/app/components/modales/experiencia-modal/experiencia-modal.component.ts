@@ -17,7 +17,7 @@ export class ExperienciaModalComponent implements OnInit {
   formulario!:FormGroup
   constructor(public activeModal: NgbActiveModal, private experienciaService:ExperienciaService, private fb: FormBuilder) {
     this.formulario = this.fb.group({
-      idelaboral: [''],
+      idlaboral: [''],
       puesto: [''],
       descripcion: [''],
       empresa: [''],
@@ -62,7 +62,7 @@ export class ExperienciaModalComponent implements OnInit {
   }
   editarForm(exp:any){
     this.formulario.setValue( {
-      idlaboral: exp.idelaboral,
+      idlaboral: exp.idlaboral,
       puesto: exp.puesto,
       descripcion: exp.descripcion,
       empresa: exp.empresa,

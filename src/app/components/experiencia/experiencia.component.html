@@ -19,7 +19,7 @@
   </ul>
 </div> -->
   <ul id="experiencia">
-    <app-addbutton *ngIf="isLoggedIn()"></app-addbutton>
+    <app-addbutton *ngIf="isLoggedIn()" (click)="abrirModalAgregar()"></app-addbutton>
     <br>
     <br>
     <li *ngFor="let Exp of experiencia">

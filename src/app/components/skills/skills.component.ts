@@ -12,6 +12,7 @@ import { SkillsModalComponent } from '../modales/skills-modal/skills-modal.compo
 })
 export class SkillsComponent implements OnInit {
 
+  login:any;
   
 
  //inyecta el servicio de modal
@@ -49,7 +50,10 @@ export class SkillsComponent implements OnInit {
  }
 
 
- ngOnInit(): void {this.getAll()}
+ ngOnInit(): void {
+  this.loginService.LogState().subscribe((login) => (this.login = login));  
+  this.getAll()
+}
 
 
   skills: any[] = [
@@ -77,9 +81,10 @@ abrirModal(){
   const modalRef = this.modalService.open(SkillsModalComponent, { centered: true }   );   //{ centered: true }     
   //modalRef.componentInstance.id = id;      pasa el id del elemento que se quiere editar al componente del modal
 }
+/*
 isLoggedIn(): boolean {
 
   return this.loginService.isLoggedIn();  
 }
-
+*/
 }

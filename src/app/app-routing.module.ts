@@ -9,7 +9,8 @@ import { PagErrorComponent } from './components/pag-error/pag-error.component';
 const routes: Routes = [
   {path: '', component:HomeComponent },
   {path: 'login', component:IniciarSesionComponent },
-  {path:'**', component: PagErrorComponent}
+  {path: 'home', component:HomeComponent },
+  {path:'**', component: PagErrorComponent},
 
 ];
 

@@ -12,11 +12,12 @@ import { EducacionModalComponent } from '../modales/educacion-modal/educacion-mo
 })
 export class EducacionComponent implements OnInit { 
 
+  login:any;
   //inyecta el servicio de modal
   constructor(private modalService: NgbModal, private educacionService:EducacionService, private loginService:LoginService) {}
   
   educacion!: Educacion [] ;
-
+  
   getById(id: number) {
     this.educacionService.getById(id).subscribe (
 			data => { this.educacion = data; }
@@ -25,8 +26,12 @@ export class EducacionComponent implements OnInit {
 
   getAll() {
     this.educacionService.getAll().subscribe (
-			data => { this.educacion = data; }
+			data => { 
+        this.educacion = data;
+        //console.log(this.educacion)
+      }
 		);
+    
   }
   delete(id: number) {
     this.educacionService.delete(id).subscribe (
@@ -47,7 +52,11 @@ export class EducacionComponent implements OnInit {
   }
 
 
-  ngOnInit(): void {this.getAll()}
+  ngOnInit(): void {
+     
+    this.getAll();
+    this.loginService.LogState().subscribe((login) => (this.login = login));
+  }
   Educacion: any[] = [
     {
       ideducion: 1,
@@ -74,8 +83,10 @@ export class EducacionComponent implements OnInit {
     const modalRef = this.modalService.open(EducacionModalComponent,  { centered: true });        
     modalRef.componentInstance.id = id;     // pasa el id del elemento que se quiere editar al componente del modal
   }
+  /*
   isLoggedIn(): boolean {
 
     return this.loginService.isLoggedIn();  
   }
+  */
 }

@@ -2,7 +2,7 @@
 <div class="row m-3">
     <h1 style="text-align: center;">Hard & Soft Skills</h1>
     <div class="d-flex justify-content-center" style="background-color: pink">
-         <app-addbutton *ngIf="isLoggedIn()" class="me-5"></app-addbutton> <app-editbutton *ngIf="isLoggedIn()" (click)="abrirModal()" class="me-2"></app-editbutton>   <app-deletebutton *ngIf="isLoggedIn()" ></app-deletebutton>
+         <app-addbutton *ngIf="login" class="me-5"></app-addbutton> <app-editbutton *ngIf="login" (click)="abrirModal()" class="me-2"></app-editbutton>   <app-deletebutton *ngIf="login" ></app-deletebutton>
     </div>   
       <div *ngFor="let item of skill" class="col-3">
         <circle-progress

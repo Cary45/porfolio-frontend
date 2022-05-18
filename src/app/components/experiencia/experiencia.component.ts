@@ -13,6 +13,7 @@ import { ExperienciaModalComponent } from '../modales/experiencia-modal/experien
 export class ExperienciaComponent implements OnInit {
   constructor(private experienciaService:ExperienciaService, private modalService: NgbModal, private loginService:LoginService)  { }
 
+  login:any;
   experiencia!: Laboral [] ;
 
   getById(id: number) {
@@ -44,7 +45,11 @@ export class ExperienciaComponent implements OnInit {
 		);
   }
 
-  ngOnInit(): void {this.getAll() }
+  ngOnInit(): void {
+    this.loginService.LogState().subscribe((login) => (this.login = login)); 
+    this.getAll()
+    console.log(this.login)
+   }
   Experiencia: any[] = [
     {
       idlaboral: 1,
@@ -79,8 +84,10 @@ export class ExperienciaComponent implements OnInit {
     const modalRef = this.modalService.open(ExperienciaModalComponent, { centered: true }   );   //{ centered: true }     
     
   }
+  /*
   isLoggedIn(): boolean {
 
     return this.loginService.isLoggedIn();  
   }
+  */
 }

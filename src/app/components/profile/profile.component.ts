@@ -10,10 +10,13 @@ import { ProfileModalComponent } from '../modales/profile-modal/profile-modal.co
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
+
+
 export class ProfileComponent implements OnInit {
+
   labelForContactLink: string = "Ver información de contacto";
   persona!: Persona;
-
+  login:any;
 
   constructor(private personaService:PersonaService,private modalService: NgbModal, private loginService:LoginService) { }
 
@@ -29,6 +32,7 @@ export class ProfileComponent implements OnInit {
       );
     }
   ngOnInit(): void {
+    this.loginService.LogState().subscribe((login) => (this.login = login)); 
     this.getById(1);
   }
 
@@ -47,8 +51,10 @@ export class ProfileComponent implements OnInit {
 
 
   //moverlo a un servicio
+  /*
   isLoggedIn(): boolean {
 
   return this.loginService.isLoggedIn();  
 }
+*/
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AutenticationService } from 'src/app/services/api-rest/autentication.service';
 import { LoginService } from 'src/app/services/api-rest/login.service';
 
 @Component({
@@ -8,6 +9,8 @@ import { LoginService } from 'src/app/services/api-rest/login.service';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
+
+  login:any;
 
   socialLinks: any[] = [
     {
@@ -33,16 +36,24 @@ export class NavComponent implements OnInit {
     }
   ];
 
-  constructor(private router: Router, private loginService:LoginService) { }
+  constructor(private router: Router, private loginService:LoginService, private autenticationServ: AutenticationService) { }
 
   ngOnInit(): void {
+    this.loginService.LogState().subscribe((login) => (this.login = login)); 
   }
 
   iniciarSesion(){
     this.router.navigate(['login']);   
   }
+
+  cerrarSesion(){
+    this.autenticationServ.CerrarSesion();
+    this.router.navigate(['home']);
+  }
+  /*
   isLoggedIn(): boolean {
 
     return this.loginService.isLoggedIn();  
   }
+  */
 }

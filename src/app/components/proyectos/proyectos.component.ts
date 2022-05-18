@@ -11,6 +11,8 @@ import { ProyectoModalComponent } from '../modales/proyecto-modal/proyecto-modal
   styleUrls: ['./proyectos.component.css']
 })
 export class ProyectosComponent implements OnInit {
+
+  login:any;
   
 constructor(private proyectoService:ProyectosService, private modalService: NgbModal,private loginService:LoginService)  { }
 
@@ -48,7 +50,10 @@ constructor(private proyectoService:ProyectosService, private modalService: NgbM
 
 
 
-  ngOnInit(): void {this.getAll()}
+  ngOnInit(): void {
+    this.loginService.LogState().subscribe((login) => (this.login = login)); 
+    this.getAll()
+  }
 
     
     Proyectos: any[] = [
@@ -74,9 +79,11 @@ constructor(private proyectoService:ProyectosService, private modalService: NgbM
       const modalRef = this.modalService.open(ProyectoModalComponent, { centered: true }   );   //{ centered: true }     
       modalRef.componentInstance.id = id;     // pasa el id del elemento que se quiere editar al componente del modal
     }
+    /*
     isLoggedIn(): boolean {
 
       return this.loginService.isLoggedIn();  
     }
+    */
   }
   

@@ -2,7 +2,7 @@
       <div class="d-flex">
             <h1>ACERCA DE MI</h1>
             <div>
-                  <app-editbutton *ngIf="isLoggedIn()" (click)="abrirModal(persona.idpersona)" class="me-2"></app-editbutton> 
+                  <app-editbutton *ngIf="login" (click)="abrirModal(persona.idpersona)" class="me-2"></app-editbutton> 
             </div>
       </div>
       <p class="card-text">{{persona.acerca}}

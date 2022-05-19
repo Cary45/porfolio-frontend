@@ -27,7 +27,9 @@ constructor(private proyectoService:ProyectosService, private modalService: NgbM
 
   getAll() {
     this.proyectoService.getAll().subscribe (
-			data => { this.proyecto = data; }
+			data => { 
+        console.log("llega data?:" + data);
+        this.proyecto = data; }
 		);
   }
   delete(id: number) {
@@ -78,6 +80,16 @@ constructor(private proyectoService:ProyectosService, private modalService: NgbM
       //utiliza el metodo open de NgbModal para abrir el modal. El parametro es el componente que se va a mostrar en el modal. "centred" se usa para centrar el modal.
       const modalRef = this.modalService.open(ProyectoModalComponent, { centered: true }   );   //{ centered: true }     
       modalRef.componentInstance.id = id;     // pasa el id del elemento que se quiere editar al componente del modal
+
+      
+    modalRef.result.then((data) => {
+      this.ngOnInit();
+    }, (reason) => {
+      alert("no funciono")
+    })
+  
+
+
     }
     /*
     isLoggedIn(): boolean {

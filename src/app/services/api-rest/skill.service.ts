@@ -6,26 +6,30 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class SkillService {
-
+  
+  
+  url: string = "https://comunidad-apirest.herokuapp.com/api";
+  url2: string = "https://error-pueblada-api.herokuapp.com/api"
   
   constructor(private http: HttpClient) {}
 
   getById(id: number): Observable<any> {
-	  return this.http.get(`http://comunidad-apirest.herokuapp.com/api/skills/${id}`);
+	  return this.http.get(this.url2 + `/skills/${id}`);
 	}
   getAll(): Observable<any> {
-	  return this.http.get(`http://comunidad-apirest.herokuapp.com/api/skills/`);
+    console.log("pasa por getAll?")
+	  return this.http.get(this.url2+'/skills');
 	}
   //terminar en algun momento
   update(id: number, skill: any): Observable<any>{
-    return this.http.put(`http://comunidad-apirest.herokuapp.com/api/skills/${id}`, skill);
+    return this.http.put(this.url2 + `/skills/${id}`, skill);
   }
 
   //terminar en algun momento
   delete(id: number): Observable<any>{
-    return this.http.delete(`http://comunidad-apirest.herokuapp.com/api/skills/${id}`);
+    return this.http.delete(this.url2 + `/skills/${id}`);
   }
  save(skill:any) : Observable<any>{
-   return this.http.post(`http://comunidad-apirest.herokuapp.com/api/skills/`, skill);
+   return this.http.post(this.url2 + `/skills/`, skill);
  }
 }

@@ -1,4 +1,4 @@
-<form [formGroup]="formulario">
+<form [formGroup]="formulario" (ngSubmit)="actualizarEducacion()">
     <div class="input-group flex-nowrap mt-2">
         <span class="input-group-text">Institucion: </span>
         <input type="text" class="form-control" placeholder= "Institucion" formControlName="institucion">
@@ -25,6 +25,9 @@
     </div>
 
 
+    <div>
+        <button class="btn btn-primary">Guardar</button>
+    </div>
     <div>
         <button class="btn btn-primary" (click)="cerrarModal()">Cerrar</button>
     </div>

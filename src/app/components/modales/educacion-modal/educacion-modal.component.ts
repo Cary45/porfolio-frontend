@@ -66,5 +66,14 @@ export class EducacionModalComponent implements OnInit {
       persona: edu.persona
     });
   }
+
+  actualizarEducacion(){
+    console.log(this.formulario.value)
+    this.educacionService.update(this.id, this.formulario.value).subscribe(
+      data => {
+        this.activeModal.close();
+      }
+    );
+  }
   
 }

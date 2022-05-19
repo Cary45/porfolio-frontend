@@ -63,4 +63,13 @@ export class ProyectoModalComponent implements OnInit {
     });
   }
 
+  actualizarProyecto(){
+    console.log(this.formulario.value)
+    this.proyectoService.update(this.id, this.formulario.value).subscribe(
+      data => {
+        this.activeModal.close();
+      }
+    );
+  }
+
 }

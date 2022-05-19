@@ -6,27 +6,31 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ExperienciaService {
-  constructor(private http: HttpClient) {
-
-  }
+ 
+ 
+  url: string = "https://comunidad-apirest.herokuapp.com/api";
+  url2: string = "https://error-pueblada-api.herokuapp.com/api"
+  
+  constructor(private http: HttpClient) {}
 
   getById(id: number): Observable<any> {
-	  return this.http.get(`http://comunidad-apirest.herokuapp.com/api/laboral/${id}`);
+	  return this.http.get(this.url2 + `/laboral/${id}`);
 	}
   getAll(): Observable<any> {
-	  return this.http.get(`http://comunidad-apirest.herokuapp.com/api/laboral/`);
+    console.log("pasa por getAll?")
+	  return this.http.get(this.url2+'/laboral');
 	}
   //terminar en algun momento
-  update(id: number, laboral: any): Observable<any>{
-    return this.http.put(`http://comunidad-apirest.herokuapp.com/api/laboral/${id}`, laboral);
+  update(id: number, skill: any): Observable<any>{
+    return this.http.put(this.url2 + `/laboral/${id}`, skill);
   }
 
   //terminar en algun momento
   delete(id: number): Observable<any>{
-    return this.http.delete(`http://comunidad-apirest.herokuapp.com/api/laboral/${id}`);
+    return this.http.delete(this.url2 + `/laboral/${id}`);
   }
- save(laboral:any) : Observable<any>{
-   return this.http.post(`http://comunidad-apirest.herokuapp.com/api/laboral/`, laboral);
+ save(skill:any) : Observable<any>{
+   return this.http.post(this.url2 + `/laboral/`, skill);
  }
  
 }

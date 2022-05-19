@@ -59,6 +59,10 @@ export class SkillsModalComponent implements OnInit {
   }
 
   guardarSkill(){
-
+    this.skillService.update(this.id, this.formulario.value).subscribe (
+      data => {       
+        this.cerrarModal();
+      }
+    ); 
   }
 }

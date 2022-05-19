@@ -12,7 +12,7 @@ import { EducacionService } from 'src/app/services/api-rest/educacion.service';
 export class EducacionModalComponent implements OnInit {
 
   @Input()  id!:number; //recibe el id del elemento que se quiere editar
-
+  @Input() eduNueva!:boolean;
   educacion!:Educacion;
   formulario!:FormGroup
   constructor(public activeModal: NgbActiveModal, private educacionService:EducacionService, private fb: FormBuilder) {
@@ -37,7 +37,9 @@ export class EducacionModalComponent implements OnInit {
     
   }
   ngOnInit(): void {
-    this.getById(this.id)
+    if(!this.eduNueva){
+      this.getById(this.id)}    
+    
   }
 
   cerrarModal(){
@@ -66,6 +68,24 @@ export class EducacionModalComponent implements OnInit {
       persona: edu.persona
     });
   }
+
+  guardarEducacion(){
+    if(this.eduNueva){
+        this.crearEducacion();      
+    }else{
+      this.actualizarEducacion();
+    }
+
+  }
+
+  crearEducacion(){
+    this.educacionService.save(this.formulario.value).subscribe(
+      data => {
+        this.activeModal.close();
+      }
+    );
+  }
+
 
   actualizarEducacion(){
     console.log(this.formulario.value)

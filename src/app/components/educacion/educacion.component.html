@@ -1,7 +1,7 @@
 <div class="educacion m-3">
   <h1>EDUCACION </h1>
   
-  <app-addbutton *ngIf="login"  ></app-addbutton>
+  <app-addbutton *ngIf="login" (click)="crearEducacionModal()" ></app-addbutton>
   <br>
   <br>
   <div class="card mb-3" style="max-width: 540px;" *ngFor="let Edu of educacion">
@@ -16,7 +16,7 @@
         <div class="d-flex justify-content-between">
           <h5 class="card-title">{{Edu.titulo}} </h5>
             <div *ngIf="login"  >
-              <app-editbutton (click)="abrirModal(Edu.ideducacion)" class="me-2"></app-editbutton>   <app-deletebutton></app-deletebutton>
+              <app-editbutton (click)="abrirModal(Edu.ideducacion)" class="me-2"></app-editbutton>   <app-deletebutton (click)="borrarEducacion(Edu.ideducacion)" ></app-deletebutton>
             </div>            
         </div>            
           <p class="card-text">{{Edu.institucion}}</p>

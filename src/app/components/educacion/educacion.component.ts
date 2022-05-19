@@ -17,6 +17,7 @@ export class EducacionComponent implements OnInit {
   constructor(private modalService: NgbModal, private educacionService:EducacionService, private loginService:LoginService) {}
   
   educacion!: Educacion [] ;
+  eduNueva:boolean = true;
   
   getById(id: number) {
     this.educacionService.getById(id).subscribe (
@@ -57,6 +58,7 @@ export class EducacionComponent implements OnInit {
     this.getAll();
     this.loginService.LogState().subscribe((login) => (this.login = login));
   }
+  /*
   Educacion: any[] = [
     {
       ideducion: 1,
@@ -77,6 +79,7 @@ export class EducacionComponent implements OnInit {
       persona: 1,
     },
   ];
+*/
 
   abrirModal(id:any){
     //utiliza el metodo open de NgbModal para abrir el modal. El parametro es el componente que se va a mostrar en el modal. "centred" se usa para centrar el modal.
@@ -89,6 +92,25 @@ export class EducacionComponent implements OnInit {
       alert("no funciono")
     })
     
+  }
+
+  crearEducacionModal(){
+    //utiliza el metodo open de NgbModal para abrir el modal. El parametro es el componente que se va a mostrar en el modal. "centred" se usa para centrar el modal.
+    const modalRef = this.modalService.open(EducacionModalComponent,  { centered: true });        
+    modalRef.componentInstance.eduNueva = this.eduNueva;     // pasa un buleano para avisar al modal que es un objeto a crear
+
+    modalRef.result.then((data) => {
+      this.ngOnInit();
+    }, (reason) => {
+      alert("no funciono")
+    })
+    
+  }
+
+  borrarEducacion(id:any){
+    this.educacionService.delete(id).subscribe (
+      data => { this.ngOnInit() }
+    );
   }
   /*
   isLoggedIn(): boolean {

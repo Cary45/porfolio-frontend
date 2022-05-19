@@ -87,10 +87,13 @@ constructor(private proyectoService:ProyectosService, private modalService: NgbM
     }, (reason) => {
       alert("no funciono")
     })
-  
+   }
 
-
-    }
+   borrarProyecto(id:any){
+    this.proyectoService.delete(id).subscribe (
+      data => { this.ngOnInit() }
+    );
+  }
     /*
     isLoggedIn(): boolean {
 

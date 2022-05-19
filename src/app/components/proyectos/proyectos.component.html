@@ -29,7 +29,7 @@
       <div class="col-md-8">
         <div class="card-body">
           <div class="d-flex justify-content-between">
-          <h5 class="card-title">{{Pro.titulo}}</h5><app-deletebutton *ngIf="login"></app-deletebutton><app-editbutton *ngIf="login" (click)="abrirModal(Pro.idproyecto)"></app-editbutton>
+          <h5 class="card-title">{{Pro.titulo}}</h5><app-deletebutton (click)="borrarProyecto (Pro.idproyecto)" *ngIf="login"></app-deletebutton ><app-editbutton *ngIf="login" (click)="abrirModal(Pro.idproyecto)"></app-editbutton>
         </div>
           <p class="card-text">{{Pro.descripcion}}</p>
           <a href="https://github.com/" class="btn btn-primary" target="_blank">Click here</a>

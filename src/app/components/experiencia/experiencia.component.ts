@@ -84,6 +84,14 @@ export class ExperienciaComponent implements OnInit {
     const modalRef = this.modalService.open(ExperienciaModalComponent, { centered: true }   );   //{ centered: true }     
     
   }
+  
+  borrarExperiencia(id:any){
+   console.log("ponel1")
+    this.experienciaService.delete(id).subscribe (
+      data => { this.ngOnInit() }
+    );
+  }
+
   /*
   isLoggedIn(): boolean {
 

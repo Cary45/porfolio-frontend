@@ -27,6 +27,7 @@ export class EducacionService {
   //terminar en algun momento
   delete(id: number): Observable<any>{
     return this.http.delete(this.url2 + `/educacion/${id}`);
+   
   }
  save(skill:any) : Observable<any>{
    return this.http.post(this.url2 + `/educacion/`, skill);

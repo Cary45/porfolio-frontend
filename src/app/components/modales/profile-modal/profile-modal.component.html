@@ -1,5 +1,9 @@
 <form [formGroup]="formulario " (ngSubmit)="actualizarProfile()">
     <div class="input-group flex-nowrap mt-2">
+        <span class="input-group-text">Titulo Adquirido </span>
+        <input type="text" class="form-control" placeholder= "Titulo Adquirido" formControlName="titulo">
+    </div>
+    <div class="input-group flex-nowrap mt-2">
         <span class="input-group-text">Nombre: </span>
         <input type="text" class="form-control" placeholder= "Nombre" formControlName="nombre">
     </div>

@@ -6,7 +6,7 @@ import { Laboral } from 'src/app/services/interface/Laboral';
 import { ExperienciaModalComponent } from '../modales/experiencia-modal/experiencia-modal.component';
 
 @Component({
-  selector: 'app-experiencia',
+    selector: 'app-experiencia',
   templateUrl: './experiencia.component.html',
   styleUrls: ['./experiencia.component.css'],
 })

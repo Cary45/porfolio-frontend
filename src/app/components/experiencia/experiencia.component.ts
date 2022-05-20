@@ -78,15 +78,20 @@ export class ExperienciaComponent implements OnInit {
   abrirModal(id:any){
     //utiliza el metodo open de NgbModal para abrir el modal. El parametro es el componente que se va a mostrar en el modal. "centred" se usa para centrar el modal.
     const modalRef = this.modalService.open(ExperienciaModalComponent, { centered: true }   );   //{ centered: true }     
-    modalRef.componentInstance.id = id;     // pasa el id del elemento que se quiere editar al componente del modal
+    modalRef.componentInstance.id = id;  
+    
+    modalRef.result.then((data) => {
+      this.ngOnInit();
+    }, (reason) => {
+      alert("no funciono")
+    })
+       // pasa el id del elemento que se quiere editar al componente del modal
   }
 
   abrirModalAgregar(){
     //utiliza el metodo open de NgbModal para abrir el modal. El parametro es el componente que se va a mostrar en el modal. "centred" se usa para centrar el modal.
     const modalRef = this.modalService.open(ExperienciaModalComponent, { centered: true }   );   //{ centered: true }  
    modalRef.componentInstance.expNueva = this.expNueva;     // pasa un buleano para avisar al modal que es un objeto a crear
-
-
 
     modalRef.result.then((data) => {
       this.ngOnInit();

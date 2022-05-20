@@ -95,6 +95,15 @@ export class ProfileModalComponent implements OnInit {
      });
    }
  
+
+
+actualizarProfile(){
+  console.log(this.formulario.value)
+  this.personaService.update(this.id,this.formulario.value).subscribe(
+    data => {
+      
+      this.cerrarModal()
+    }
+  );
 }
-
-
+}

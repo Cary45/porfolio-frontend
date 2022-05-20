@@ -16,7 +16,7 @@ export class ExperienciaComponent implements OnInit {
   login:any;
   experiencia!: Laboral [] ;
   
-  eduNueva:boolean = true;
+  expNueva:boolean = true;
 
   getById(id: number) {
     this.experienciaService.getById(id).subscribe (
@@ -84,6 +84,10 @@ export class ExperienciaComponent implements OnInit {
   abrirModalAgregar(){
     //utiliza el metodo open de NgbModal para abrir el modal. El parametro es el componente que se va a mostrar en el modal. "centred" se usa para centrar el modal.
     const modalRef = this.modalService.open(ExperienciaModalComponent, { centered: true }   );   //{ centered: true }  
+   modalRef.componentInstance.expNueva = this.expNueva;     // pasa un buleano para avisar al modal que es un objeto a crear
+
+
+
     modalRef.result.then((data) => {
       this.ngOnInit();
     }, (reason) => {

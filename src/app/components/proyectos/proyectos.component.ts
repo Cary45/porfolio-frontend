@@ -12,12 +12,15 @@ import { ProyectoModalComponent } from '../modales/proyecto-modal/proyecto-modal
 })
 export class ProyectosComponent implements OnInit {
 
-  login:any;
   
 constructor(private proyectoService:ProyectosService, private modalService: NgbModal,private loginService:LoginService)  { }
 
+login:any;
 
   proyecto!: Proyecto [] ;
+
+  proNuevo:boolean = true;
+
 
   getById(id: number) {
     this.proyectoService.getById(id).subscribe (
@@ -97,8 +100,14 @@ constructor(private proyectoService:ProyectosService, private modalService: NgbM
 
   abrirModalAgregar(){
     //utiliza el metodo open de NgbModal para abrir el modal. El parametro es el componente que se va a mostrar en el modal. "centred" se usa para centrar el modal.
-    const modalRef = this.modalService.open(ProyectoModalComponent, { centered: true }   );   //{ centered: true }     
+    const modalRef = this.modalService.open(ProyectoModalComponent, { centered: true }   ); 
+    modalRef.componentInstance.proNuevo = this.proNuevo;     // pasa un buleano para avisar al modal que es un objeto a crear  //{ centered: true }     
     
+     modalRef.result.then((data) => {
+      this.ngOnInit();
+    }, (reason) => {
+      alert("no funciono")
+    })
   }
     /*
     isLoggedIn(): boolean {

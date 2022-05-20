@@ -13,10 +13,10 @@ export class ProyectoModalComponent implements OnInit {
 
   
   @Input()  id!:number; //recibe el id del elemento que se quiere editar
+  @Input() proNuevo!:boolean;
 
   proyecto!:Proyecto;
   formulario!:FormGroup
-  proNuevo: any;
   
   constructor(public activeModal: NgbActiveModal, private proyectoService:ProyectosService, private fb: FormBuilder) {
     this.formulario = this.fb.group({

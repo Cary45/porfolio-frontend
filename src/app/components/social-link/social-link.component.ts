@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Redes } from 'src/app/services/interface/Redes';
 
 @Component({
   selector: 'app-social-link',
@@ -7,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SocialLinkComponent implements OnInit {
 
-  @Input() link: any;
+  @Input() link!: Redes;
 
   constructor() { }
 

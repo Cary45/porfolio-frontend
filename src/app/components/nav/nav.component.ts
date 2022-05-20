@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AutenticationService } from 'src/app/services/api-rest/autentication.service';
 import { LoginService } from 'src/app/services/api-rest/login.service';
+import { RedesService } from 'src/app/services/api-rest/redes.service';
+import { Redes } from 'src/app/services/interface/Redes';
 
 @Component({
   selector: 'app-nav',
@@ -12,34 +14,13 @@ export class NavComponent implements OnInit {
 
   login:any;
 
-  socialLinks: any[] = [
-    {
-      "idred": 1,
-      "nombre": "Linkedin",
-      "url": "https://linkedin.com/in/olivia",
-      "fotourl": null,
-      "persona": 1
-    },
-    {
-      "idred": 2,
-      "nombre": "Github",
-      "url": "https://github.com/olivia",
-      "fotourl": null,
-      "persona": 1
-    },
-    {
-      "idred": 3,
-      "nombre": "Instagram",
-      "url": "https://instagram.com/olivia",
-      "fotourl": null,
-      "persona": 1
-    }
-  ];
+  socialLinks!: Redes [] 
 
-  constructor(private router: Router, private loginService:LoginService, private autenticationServ: AutenticationService) { }
+  constructor(private router: Router, private loginService:LoginService, private autenticationServ: AutenticationService, private redesService: RedesService) { }
 
   ngOnInit(): void {
     this.loginService.LogState().subscribe((login) => (this.login = login)); 
+    this.getAll();
   }
 
   iniciarSesion(){
@@ -56,4 +37,12 @@ export class NavComponent implements OnInit {
     return this.loginService.isLoggedIn();  
   }
   */
+
+  getAll(){
+    this.redesService.getAll().subscribe((redes) => {
+      this.socialLinks = redes;
+      console.log(redes);
+    });
+  }
+
 }

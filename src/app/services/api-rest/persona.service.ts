@@ -21,16 +21,16 @@ export class PersonaService {
 	  return this.http.get(this.url2+'/personas');
 	}
   //terminar en algun momento
-  update(id: number, skill: any): Observable<any>{
-    return this.http.put(this.url2 + `/personas/${id}`, skill);
+  update(id: number, persona: any): Observable<any>{
+    return this.http.put(this.url2 + `/personas/${id}`, persona);
   }
 
   //terminar en algun momento
   delete(id: number): Observable<any>{
     return this.http.delete(this.url2 + `/personas/${id}`);
   }
- save(skill:any) : Observable<any>{
-   return this.http.post(this.url2 + `/personas/`, skill);
+ save(persona:any) : Observable<any>{
+   return this.http.post(this.url2 + `/personas/`, persona);
  }
 
 

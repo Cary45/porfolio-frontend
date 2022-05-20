@@ -13,10 +13,11 @@ import { AboutModalComponent } from '../modales/about-modal/about-modal.componen
 export class AboutComponent implements OnInit {
  constructor(private personaService:PersonaService, private modalService: NgbModal, private loginService:LoginService)  { }
  
+  id:number =1
   persona!: Persona ;
   login:any;   
   getById(id: number) {
-    this.personaService.getById(1).subscribe (
+    this.personaService.getById(id).subscribe (
 			data => { this.persona = data;
       //console.log(this.persona)        
       }
@@ -29,8 +30,9 @@ export class AboutComponent implements OnInit {
       );
     }
     ngOnInit(): void {
+      this.getById(this.id) 
       this.loginService.LogState().subscribe((login) => (this.login = login)); 
-      this.getById(1) 
+      
     }
      
 
@@ -47,6 +49,13 @@ abrirModal(id:any){
   console.log(id)
   const modalRef = this.modalService.open(AboutModalComponent, { centered: true }   );   //{ centered: true }     
   modalRef.componentInstance.id = id;     // pasa el id del elemento que se quiere editar al componente del modal
+  modalRef.result.then((data) => {
+    console.log("pasa por aca?")
+    this.ngOnInit();
+  }, (reason) => {
+    alert("no funciono")
+  })
+  
 }
 /*
 isLoggedIn(): boolean {

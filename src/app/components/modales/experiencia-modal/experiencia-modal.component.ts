@@ -12,6 +12,7 @@ import { ExperienciaService } from 'src/app/services/api-rest/experiencia.servic
 export class ExperienciaModalComponent implements OnInit {
 
   @Input()  id!:number; //recibe el id del elemento que se quiere editar
+  @Input() expNueva!:boolean;
 
   experiencia!:Laboral;
   formulario!:FormGroup
@@ -37,14 +38,15 @@ export class ExperienciaModalComponent implements OnInit {
     persona: number;
     */
   
-  
-  
-  
+    
+  }
+  ngOnInit(): void {
+    if(!this.expNueva){
+      this.getById(this.id)}    
+    
   }
 
-   ngOnInit(): void {
-      this.getById(this.id)
-  }
+  
 
   cerrarModal(){
     this.activeModal.close();
@@ -60,6 +62,29 @@ export class ExperienciaModalComponent implements OnInit {
         );
 
   }
+  // guardarExperiencia(){
+  //   if(this.eduNueva){
+  //       this.crearExperiencia();      
+  //   }else{
+  //     this.actualizarExperiencia();
+  //   }
+
+  // }
+  // crearExperiencia(){
+  //   this.experienciaService.save(this.formulario.value).subscribe(
+  //     data => {
+  //       this.activeModal.close();
+  //     }
+  //   );
+  // }
+  // actualizarExperiencia(){
+  //   console.log(this.formulario.value)
+  //   this.experienciaService.update(this.id, this.formulario.value).subscribe(
+  //     data => {
+  //       this.activeModal.close();
+  //     }
+  //   );
+  // }
   editarForm(exp:any){
     this.formulario.setValue( {
       idlaboral: exp.idlaboral,
@@ -72,5 +97,30 @@ export class ExperienciaModalComponent implements OnInit {
       persona: exp.persona
     });
   }
-  
+  guardarExperiencia(){
+    if(this.expNueva){
+        this.crearExperiencia();      
+    }else{
+      this.actualizarExperiencia();
+    }
+
+  }
+
+  crearExperiencia(){
+    this.experienciaService.save(this.formulario.value).subscribe(
+      data => {
+        this.activeModal.close();
+      }
+    );
+  }
+
+
+  actualizarExperiencia(){
+    console.log(this.formulario.value)
+    this.experienciaService.update(this.id, this.formulario.value).subscribe(
+      data => {
+        this.activeModal.close();
+      }
+    );
+  }
 }

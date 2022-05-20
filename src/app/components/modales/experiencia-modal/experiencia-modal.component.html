@@ -1,4 +1,4 @@
-<form [formGroup]="formulario">
+<form [formGroup]="formulario" (ngSubmit)="guardarExperiencia()">
     <div class="input-group flex-nowrap mt-2">
         <span class="input-group-text">Puesto: </span>
         <input type="text" class="form-control" placeholder= "puesto" formControlName="puesto">
@@ -25,7 +25,9 @@
         <span class="input-group-text">Logo empresa: </span>
         <input type="text" class="form-control" placeholder="Logo empresa" formControlName="fotourl">
     </div>
-
+    <div>
+        <button class="btn btn-primary" (click)="guardarExperiencia()">Guardar</button>
+    </div>
     <div>
         <button class="btn btn-primary" (click)="cerrarModal()">Cerrar</button>
     </div>

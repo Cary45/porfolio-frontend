@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -30,6 +30,7 @@ import { PagErrorComponent } from './components/pag-error/pag-error.component';
 import { ProfileModalComponent } from './components/modales/profile-modal/profile-modal.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { IniciarSesionComponent } from './components/iniciar-sesion/iniciar-sesion.component';
+import { InterceptorService } from './services/api-rest/interceptor.service';
 
 
 
@@ -69,7 +70,11 @@ import { IniciarSesionComponent } from './components/iniciar-sesion/iniciar-sesi
     NgxScrollTopModule,
     ReactiveFormsModule //se importa para usar en los formularios reactivos
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: InterceptorService,
+    multi: true
+  }],
   bootstrap: [AppComponent],
   entryComponents: [EducacionModalComponent, ExperienciaModalComponent, ProyectoModalComponent, SkillsModalComponent, AboutModalComponent, ProfileModalComponent] //habilia al componente para que se pueda usar en un modal
 })

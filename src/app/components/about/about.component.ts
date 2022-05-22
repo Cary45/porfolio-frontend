@@ -35,28 +35,20 @@ export class AboutComponent implements OnInit {
       
     }
      
-
-  /*de aca tomada los datos    
-  About: any[] = [
-  {   acercade: "Acerca de",
-      texto: "Programador fullstack junior freelance."
-
-  } 
-]
-*/
-abrirModal(id:any){
-  //utiliza el metodo open de NgbModal para abrir el modal. El parametro es el componente que se va a mostrar en el modal. "centred" se usa para centrar el modal.
-  console.log(id)
-  const modalRef = this.modalService.open(AboutModalComponent, { centered: true }   );   //{ centered: true }     
-  modalRef.componentInstance.id = id;     // pasa el id del elemento que se quiere editar al componente del modal
-  modalRef.result.then((data) => {
-    console.log("pasa por aca?")
-    this.ngOnInit();
-  }, (reason) => {
-    alert("no funciono")
-  })
+  abrirModal(id:any){
+  // metodo open de NgbModal para abrir el modal.Parametro es el componente que muestra el modal. "centred"->centrar modal
+    console.log(id)
+    const modalRef = this.modalService.open(AboutModalComponent, { centered: true }   );       
+    modalRef.componentInstance.id = id;     // pasa el id del elemento que se quiere editar al componente del modal
+    modalRef.result.then((data) => {
+       console.log("pasa por aca?")
+       this.ngOnInit();
+    }, 
+    (reason) => {
+       alert("no funciono")
+    })
   
-}
+  }
 /*
 isLoggedIn(): boolean {
 

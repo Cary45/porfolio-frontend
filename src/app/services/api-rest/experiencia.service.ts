@@ -17,7 +17,7 @@ export class ExperienciaService {
 	}
   getAll(): Observable<any> {
     console.log("pasa por getAll?")
-	  return this.http.get(this.url+'/laboral');
+	  return this.http.get(this.url +'/laboral');
 	}
   //terminar en algun momento
   update(id: number, skill: any): Observable<any>{

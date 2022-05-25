@@ -8,29 +8,28 @@ import { Observable } from 'rxjs';
 export class ExperienciaService {
  
  
-  url2: string = "https://comunidad-apirest.herokuapp.com/api";
-  url: string = "https://error-pueblada-api.herokuapp.com/api"
+  url: string = "https://proyectoap1-cary.herokuapp.com/api"
   
   constructor(private http: HttpClient) {}
 
   getById(id: number): Observable<any> {
-	  return this.http.get(this.url2 + `/laboral/${id}`);
+	  return this.http.get(this.url + `/laboral/${id}`);
 	}
   getAll(): Observable<any> {
     console.log("pasa por getAll?")
-	  return this.http.get(this.url2+'/laboral');
+	  return this.http.get(this.url+'/laboral');
 	}
   //terminar en algun momento
   update(id: number, skill: any): Observable<any>{
-    return this.http.put(this.url2 + `/laboral/${id}`, skill);
+    return this.http.put(this.url + `/laboral/${id}`, skill);
   }
 
   //terminar en algun momento
   delete(id: number): Observable<any>{
-    return this.http.delete(this.url2 + `/laboral/${id}`);
+    return this.http.delete(this.url + `/laboral/${id}`);
   }
  save(skill:any) : Observable<any>{
-   return this.http.post(this.url2 + `/laboral/`, skill);
+   return this.http.post(this.url + `/laboral/`, skill);
  }
  
 }

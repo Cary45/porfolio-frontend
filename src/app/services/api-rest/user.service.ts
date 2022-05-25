@@ -8,8 +8,7 @@ import { User } from '../interface/user';
 })
 export class UserService {
 
-  url2: string = "https://comunidad-apirest.herokuapp.com/api";
-  url: string = "https://error-pueblada-api.herokuapp.com/api"
+  url: string = "https://proyectoap1-cary.herokuapp.com/api"
   user: User = { username: "", password: "", token: "" };
 
   constructor(private http: HttpClient) {
@@ -19,7 +18,7 @@ export class UserService {
   login(username: string, password: string): Observable<any> {  
     this.user.username = username;
     this.user.password = password;
-	  return this.http.post(`https://comunidad-apirest.herokuapp.com/api/login`, this.user);
+	  return this.http.post(`https://proyectoap1-cary.herokuapp.com/api/login`, this.user);
 	}
 
   

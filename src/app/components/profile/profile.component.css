@@ -31,6 +31,7 @@ img.card-img-top {
     border: 3px solid #fff;
 }
 
-.card-title {
+.card {
+    justify-content: space-evenly;
     margin-top: 1rem;
 }

@@ -1,6 +1,9 @@
+.d-flex{
 
 
-#about {
-    margin: 1rem;
-    padding: 1rem;
+    flex-direction: column;
+   
+}
+.card-text{
+    
 }

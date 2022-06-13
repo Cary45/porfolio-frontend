@@ -3,6 +3,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Educacion } from 'src/app/services/interface/Educacion';
 import { EducacionService } from 'src/app/services/api-rest/educacion.service';
+import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-educacion-modal',
@@ -79,6 +80,7 @@ export class EducacionModalComponent implements OnInit {
   }
 
   crearEducacion(){
+    this.formulario.value.persona = 1
     this.educacionService.save(this.formulario.value).subscribe(
       data => {
         this.activeModal.close();

@@ -76,6 +76,7 @@ export class ProyectoModalComponent implements OnInit {
   }
 
     crearProyecto(){
+      this.formulario.value.persona = 1;
       this.proyectoService.save(this.formulario.value).subscribe(
         data => {
           this.activeModal.close();

@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class RedesService {
 
-  url: string = "https://proyectoap1-cary.herokuapp.com/api"
+  url: string = "https://proyectoap1.herokuapp.com/api"
   
   constructor(private http: HttpClient) {}
 

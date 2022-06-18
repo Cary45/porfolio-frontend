@@ -12,3 +12,8 @@ h1{
 img{
     background-color: grey;
 }
+d-flex {
+    display: flex!important;
+    justify-content: space-between;
+    align-items: center;
+}

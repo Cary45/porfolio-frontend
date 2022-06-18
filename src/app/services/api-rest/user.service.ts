@@ -8,7 +8,7 @@ import { User } from '../interface/user';
 })
 export class UserService {
 
-  url: string = "https://proyectoap1-cary.herokuapp.com/api"
+  url: string = "https://proyectoap1.herokuapp.com/api"
   user: User = { username: "", password: "", token: "" };
 
   constructor(private http: HttpClient) {

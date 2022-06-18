@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class EducacionService {
 
-  url: string = "https://proyectoap1.herokuapp.com/api"
+  url: string = "https://git.heroku.com/proyectoap1.git/api"
   
   constructor(private http: HttpClient) {}
 

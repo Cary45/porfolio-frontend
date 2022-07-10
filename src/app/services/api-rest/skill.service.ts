@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class SkillService {
   
   
-  url: string = "https://proyectoap1.herokuapp.com/api"
+  url: string = "https://proyectoapi1.herokuapp.com/api"
   
   constructor(private http: HttpClient) {}
 

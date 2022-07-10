@@ -1,5 +1,5 @@
 export interface Redes {
-    idred?: String;
+    idredes?: number;
     nombre: String;
     url: String;
     fotourl: String;   

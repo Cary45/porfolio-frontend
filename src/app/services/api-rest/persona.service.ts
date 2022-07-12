@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class PersonaService {
 
-  url: string = "https://proyectoapi1.herokuapp.com/api"
+  url: string = "https://apicarina1.herokuapp.com/ap"
   
   constructor(private http: HttpClient) {}
 

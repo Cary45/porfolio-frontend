@@ -37,7 +37,7 @@ export class IniciarSesionComponent implements OnInit {
 
   loginFalso() {
     //pedir al post...    
-    this.userService.login("olivia", "1234").subscribe(
+    this.userService.login("carina", "1234").subscribe(
       data => {
         this.persona = data;
         //console.log(this.persona);

@@ -1,10 +1,10 @@
 <div id="about" class="card all-card">   
-      <div class>
-            <br>
-            <h1>ACERCA DE MI</h1>
+      <div class="card-title">
+            <h1 style="color:rgb(131, 7, 7);">Acerca De Mi</h1>
             <div>
                   <app-editbutton *ngIf="login" (click)="abrirModal(persona.idpersona)" class="me-2"></app-editbutton> 
             </div>
       </div>
-      <p class="card-text">{{persona.acerca}}</p>
+      <p class="card-text"><b>{{persona.acerca}}</b></p>
+      <br>
 </div>

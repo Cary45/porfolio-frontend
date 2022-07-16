@@ -1,18 +1,19 @@
 
-<div class="row m-3">
+<div class="row m-4">
     <h1 style="text-align: center;">Hard & Soft Skills</h1>
-    <!-- <div class="d-flex justify-content-center" style="background-color: pink">
-         <app-addbutton *ngIf="login" class="me-5"></app-addbutton> <app-editbutton *ngIf="login" (click)="abrirModal()" class="me-2"></app-editbutton>   <app-deletebutton *ngIf="login" ></app-deletebutton>
-    </div>    -->
-      <div *ngFor="let item of skill" class="col-3">
+    
+      <div *ngFor="let item of skill" class="col-4">
         <div class=" d-flex justify-content-center">
             <circle-progress
               [percent]="item.dominio"
-              [radius]="100"
-              [subtitle]="item.titulo"
+              [radius]="150"
+              [imageSrc]="item.titulo"
+              [showImage]="true"
+              [imageWidth]="170"
+              [imageHeight]="170"
               [subtitleColor]="'#000000'"
-              [outerStrokeWidth]="16"
-              [innerStrokeWidth]="8"
+              [outerStrokeWidth]="20"
+              [innerStrokeWidth]="12"
               [outerStrokeColor]="'#0000FF'"
               [innerStrokeColor]="'#5178B3'"
               [animation]="true"
@@ -23,78 +24,4 @@
       </div>
   </div>
 
-   <!--<div class="text-center col-sm-4 col-md-4 col-lg-4">
-      <circle-progress
-        [percent]="100"
-        [radius]="100"
-        [subtitle]="'Progreso'"
-        [subtitleColor]="'#000000'"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#5178B3'"
-        [innerStrokeColor]="'#5178B3'"
-        [animation]="true"
-        [animationDuration]="500"
-      ></circle-progress>
-    </div>
-
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-      <circle-progress
-        [percent]="100"
-        [radius]="100"
-        [subtitle]="'Progreso'"
-        [subtitleColor]="'#000000'"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#5178B3'"
-        [innerStrokeColor]="'#5178B3'"
-        [animation]="true"
-        [animationDuration]="500"
-      ></circle-progress>
-    </div>
-
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-      <circle-progress
-        [percent]="100"
-        [radius]="100"
-        [subtitle]="'Progreso'"
-        [subtitleColor]="'#000000'"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#5178B3'"
-        [innerStrokeColor]="'#5178B3'"
-        [animation]="true"
-        [animationDuration]="500"
-      ></circle-progress>
-    </div>
-
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-      <circle-progress
-        [percent]="100"
-        [radius]="100"
-        [subtitle]="'Progreso'"
-        [subtitleColor]="'#000000'"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#5178B3'"
-        [innerStrokeColor]="'#5178B3'"
-        [animation]="true"
-        [animationDuration]="500"
-      ></circle-progress>
-    </div>
-
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-      <circle-progress
-        [percent]="100"
-        [radius]="100"
-        [subtitle]="'Progreso'"
-        [subtitleColor]="'#000000'"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#5178B3'"
-        [innerStrokeColor]="'#5178B3'"
-        [animation]="true"
-        [animationDuration]="500"
-      ></circle-progress>
-    </div> -->
-
+   

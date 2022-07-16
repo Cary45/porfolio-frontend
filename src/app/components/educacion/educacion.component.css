@@ -1,19 +1,22 @@
 .educacion {
-     background: rgb(143, 143, 28);
+     background: rgb(212, 212, 63);
       padding: 20px;
       border-radius: 20px;
+      border: 0.5px solid black;
     } 
-h1{
-    text-align: center;
-    font-size: xx-large;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-}    
+ #educacion {
+      padding: 0;
+      list-style: none;
+  }
+    .card-horizontal {
+        display: flex;
+        flex: 1 1 auto;
+        border: 0.5px solid black;
+    }
+ h1{
+        text-align: center;
+        
+    } 
 img{
-    background-color: grey;
-}
-d-flex {
-    display: flex!important;
-    justify-content: space-between;
-    align-items: center;
+    border: 0.5px solid black;
 }

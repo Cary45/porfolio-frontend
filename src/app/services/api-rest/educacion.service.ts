@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class EducacionService {
 
-  url: string = "https://apicarina1.herokuapp.com/ap"
+  url: string = "https://apicarina1.herokuapp.com/api"
   
   constructor(private http: HttpClient) {}
 

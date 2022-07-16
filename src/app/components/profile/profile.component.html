@@ -9,21 +9,17 @@
                 <img [src]="persona.fotourl"
                     id="profile-img" alt="Foto de perfil de {{persona.nombre}}">
             </div>
-            <!--<div class="btn-edit"><a href="" class="btn-right"><i class='bx bxs-edit-alt'></i></a></div>-->
             <div class="info-text">
-                <h1 class="card-title">{{persona.nombre}} {{persona.apellido}}</h1>
-                <p class="card-text">{{persona.titulo}}</p>
-                <div id="info-contact" class="localidad grey">{{persona.ubicacion}}</div>
-                <span class="localidad" id="contacto"><!--<a href="#">{{labelForContactLink}} </a>--></span>
+                <h1 class="card-title"style="color :rgb(96, 95, 95) ;-webkit-text-stroke: 2px black;" >{{persona.nombre}} {{persona.apellido}}</h1>
+                <p class="card-text"><b>{{persona.titulo}}</b></p>
+                <div id="info-contact" class="localidad grey">{{persona.ubicacion}} - {{persona.telefono}}</div>
+                <span class="localidad" id="contacto">Email - {{persona.email}} </span>
+                <br>
+                
             </div>
-            <!--<div class="info-btns">
-                <button *ngIf="login" class="btn btn-primary" type="button" > ✏️</button>
-                <!--<button class="btn" type="button">Añadir sección</button>
-                <button class="btn" type="button">Más</button>
-            </div> 
-            -->
-            <div class="d-flex justify-content-end" style="background-color: blueviolet">
-                <app-editbutton id="fantasma" *ngIf="login" (click)="abrirModal(persona.idpersona)"class="me-2" style="background-color: red;"></app-editbutton>
+           
+            <div class="d-flex justify-content-end">
+                <app-editbutton id="fantasma" *ngIf="login" (click)="abrirModal(persona.idpersona)"class="me-2"></app-editbutton>
                 </div>
         </div>
     </div>

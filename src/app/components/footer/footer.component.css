@@ -1,7 +1,7 @@
-.row{
-    background-color:rgb(159, 215, 248);
-}
-footer{
+.footer{
+    background-color:rgba(202, 209, 214, 0.863);
+    border: 0.5px solid black;
+    border-radius: 20px;
     color: #1f1c1c;
     font-size: 14px;
     display: flex;

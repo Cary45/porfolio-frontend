@@ -1,7 +1,8 @@
 <div class="container" >
     <form [formGroup]="formulario" class="m-5" (ngSubmit)="iniciarSesion()">
+        <h3>Validacion de Login</h3>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Username</label>
+            <label for="exampleInputEmail1" class="form-label">UserName</label>
             <input type="email" formControlName="username"
             [ngClass]="{'is-invalid': username?.errors && username?.touched, 'is-valid': username?.valid && username?.touched}"
             class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">

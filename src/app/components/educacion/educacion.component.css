@@ -20,3 +20,7 @@
 img{
     border: 0.5px solid black;
 }
+
+.card-body{
+   /* margin-left: 50px;*/
+}

@@ -16,6 +16,7 @@
                  <h4 class="card-title">{{Edu.titulo}}</h4>
                  <h5>{{Edu.institucion}}</h5>
                  <p> Metodologia de trabajo y diseño. Armado de un reporte y presentacion</p>
+                 <a href="{{Edu.institucionurl}}" class="card-text" *ngIf ="Edu.institucionurl" target="_blank"><button type="button" class="btn btn-outline-primary" > {{Edu.institucionurl}} </button></a>
                  <div *ngIf="login" >
                    <app-editbutton (click)="abrirModal(Edu.ideducacion)" class="me-2"></app-editbutton>   <app-deletebutton  (click)="borrarEducacion(Edu.ideducacion)" > </app-deletebutton>
                  </div>            
